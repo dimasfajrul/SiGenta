@@ -43,16 +43,16 @@
                                             <td>asdasd</td>
                                             <td>asdasd</td>
                                             <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="" class="text-secondary font-weight-bold text-xs">
                                                     Lihat berkas
                                                 </a>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs">
                                                     Edit
                                                 </a>
                                                 |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="" class="text-danger font-weight-bold text-xs">
                                                     Hapus
                                                 </a>
                                             </td>
@@ -66,16 +66,16 @@
                                             <td>asdasd</td>
                                             <td>asdasd</td>
                                             <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="" class="text-secondary font-weight-bold text-xs">
                                                     Lihat berkas
                                                 </a>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs">
                                                     Edit
                                                 </a>
                                                 |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="" class="text-danger font-weight-bold text-xs">
                                                     Hapus
                                                 </a>
                                             </td>
@@ -89,16 +89,16 @@
                                             <td>asdasd</td>
                                             <td>asdasd</td>
                                             <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="" class="text-secondary font-weight-bold text-xs">
                                                     Lihat berkas
                                                 </a>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs">
                                                     Edit
                                                 </a>
                                                 |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="" class="text-danger font-weight-bold text-xs">
                                                     Hapus
                                                 </a>
                                             </td>
