@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('') ?>">
+                <a class="nav-link" href="<?= base_url('Keuangan') ?>">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-warning text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-credit-card"></i>
                     </div>
