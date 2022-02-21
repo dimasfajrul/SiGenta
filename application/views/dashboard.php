@@ -115,7 +115,7 @@
                                 </div>
                                 <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
                                     <div class="bg-gradient-primary border-radius-lg h-100">
-                                        <img src="../assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
+                                        <img src="<?= base_url('') ?>assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
                                         <div class="position-relative d-flex align-items-center justify-content-center h-100">
                                             <img class="w-100 position-relative z-index-2 pt-4" src="<?= base_url('') ?>assets/img/illustrations/rocket-white.png" alt="rocket">
                                         </div>
@@ -274,11 +274,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--<div class="card-body p-3">
-              <div class="chart">
-                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-              </div>
-            </div> -->
                     </div>
                 </div>
             </div>
@@ -324,7 +319,7 @@
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
-                                                        <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd">
+                                                        <img src="<?= base_url('') ?>assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd">
                                                     </div>
                                                     <div class="d-flex flex-column justify-content-center">
                                                         <h6 class="mb-0 text-sm">Soft UI XD Version</h6>
@@ -334,16 +329,16 @@
                                             <td>
                                                 <div class="avatar-group mt-2">
                                                     <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                                                        <img src="../assets/img/team-1.jpg" alt="team1">
+                                                        <img src="<?= base_url('') ?>assets/img/team-1.jpg" alt="team1">
                                                     </a>
                                                     <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                                                        <img src="../assets/img/team-2.jpg" alt="team2">
+                                                        <img src="<?= base_url('') ?>assets/img/team-2.jpg" alt="team2">
                                                     </a>
                                                     <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                                                        <img src="../assets/img/team-3.jpg" alt="team3">
+                                                        <img src="<?= base_url('') ?>assets/img/team-3.jpg" alt="team3">
                                                     </a>
                                                     <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                                                        <img src="../assets/img/team-4.jpg" alt="team4">
+                                                        <img src="<?= base_url('') ?>assets/img/team-4.jpg" alt="team4">
                                                     </a>
                                                 </div>
                                             </td>
