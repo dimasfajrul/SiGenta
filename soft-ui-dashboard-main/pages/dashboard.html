@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
-    Soft UI Dashboard by Creative Tim
+    Si-Genta
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -85,7 +85,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Berkas Keuangan</span>
+            <span class="nav-link-text ms-1">Data Tiap Isu</span>
           </a>
         </li>
         <li class="nav-item">
@@ -105,7 +105,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Billing</span>
+            <span class="nav-link-text ms-1">Berkas Keuangan</span>
           </a>
         </li>
         <li class="nav-item">
@@ -126,7 +126,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
+            <span class="nav-link-text ms-1">Nota Dinas</span>
           </a>
         </li>
         <li class="nav-item">
@@ -255,9 +255,9 @@
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+              <a href="../pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Sign In</span>
+                <span class="d-sm-inline d-none">Keluar</span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -384,7 +384,7 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Surat Keluar</p>
                     <h5 class="font-weight-bolder mb-0">
-                      2,300
+                      5
                       <span class="text-success text-sm font-weight-bolder">+3%</span>
                     </h5>
                   </div>
@@ -450,11 +450,11 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">Built by developers</p>
-                    <h5 class="font-weight-bolder">Soft UI Dashboard</h5>
-                    <p class="mb-5">From colors, cards, typography to complex elements, you will find the full documentation.</p>
-                    <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-                      Read More
+                    <p class="mb-1 pt-2 text-bold">Hightlight</p>
+                    <h5 class="font-weight-bolder">Dukung Upaya Dekarbonisasi BUMN, Deputi Nani: Ini Upaya Nyata</h5>
+                    <p class="mb-5"> Deputi Bidang Koordinasi Pengelolaan Lingkungan dan Kehutanan </p>
+                    <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="https://maritim.go.id/dukung-upaya-dekarbonisasi-bumn-deputi-nani-ini-upaya/">
+                      Selengkapnya
                       <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                     </a>
                   </div>
@@ -613,11 +613,18 @@
                 <span class="font-weight-bold">4% more</span> in 2021
               </p>
             </div>
-            <div class="card-body p-3">
+            <div class="card mb-3">
+              <div class="card-body p-3">
+                <div class="chart">
+                  <canvas id="pie-chart" class="chart-canvas" height="300px"></canvas>
+                </div>
+              </div>
+            </div>
+            <!--<div class="card-body p-3">
               <div class="chart">
                 <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -652,7 +659,7 @@
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Companies</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Judul</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Members</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Budget</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completion</th>
@@ -1140,7 +1147,7 @@
     });
 
 
-    var ctx2 = document.getElementById("chart-line").getContext("2d");
+    var ctx2 = document.getElementById("pie-chart").getContext("2d");
 
     var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
 
