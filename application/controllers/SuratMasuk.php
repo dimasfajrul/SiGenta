@@ -10,11 +10,11 @@ class SuratMasuk extends CI_Controller {
 	
     public function tambah()
 	{
-		$this->load->view('dataTiapIsu/tambah');
+		$this->load->view('suratmasuk/tambah');
 	}
     
     public function edit()
 	{
-		$this->load->view('dataTiapIsu/edit');
+		$this->load->view('suratmasuk/edit');
 	}
 }

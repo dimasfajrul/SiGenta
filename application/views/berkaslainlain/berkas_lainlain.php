@@ -92,7 +92,7 @@
                                                 </a>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="<?= base_url('BerkasLainLain/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit
                                                 </a>
                                                 |

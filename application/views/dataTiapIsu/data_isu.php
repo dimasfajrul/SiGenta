@@ -15,13 +15,7 @@
                                 <div class="col-10">
                                     <h6>Data Tiap Isu</h6>
                                     <a href="<?= base_url('DataIsu/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
-<<<<<<< HEAD
                                     <button type="button" class="btn btn-outline-primary">Tabel Kendali</button>
-=======
-                                </div>
-                                <div class="col-2">
-                                    <a href="" data-toggle="modal" data-target="#hapusModal" class="btn btn-outline-primary btn-sm mb-0 text-end">View All</a>
->>>>>>> 284da5eb499cb1b9e2567199f573c0a40ceb7a0e
                                 </div>
                             </div>
                         </div>

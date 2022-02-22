@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group">
-                                            <a href="<?= base_url('Keuangan') ?>" class="btn btn-icon btn-danger">
+                                            <a href="<?= base_url('Keuangan') ?>" class="btn btn-icon btn-secondary">
                                                 <span class="btn-inner--text">Kembali</span>
                                             </a>
                                             <button class="btn btn-icon btn-info" type="submit">

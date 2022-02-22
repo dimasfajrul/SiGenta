@@ -15,6 +15,6 @@ class Keuangan extends CI_Controller {
     
     public function edit()
 	{
-		$this->load->view('dberkaskeuangan/edit');
+		$this->load->view('berkaskeuangan/edit');
 	}
 }

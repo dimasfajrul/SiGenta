@@ -14,7 +14,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <h6>Surat Masuk </h6>
-                                    <a href="<?= base_url('DataIsu/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
+                                    <a href="<?= base_url('SuratMasuk/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
                                     <button type="button" class="btn btn-outline-primary">Tabel Kendali</button>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                                                 </a>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs">
+                                                <a href="<?= base_url('SuratMasuk/edit') ?>" class="text-info font-weight-bold text-xs">
                                                     Edit
                                                 </a>
                                                 |
@@ -69,7 +69,7 @@
                                                 </a>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs">
+                                                <a href="<?= base_url('SuratMasuk/edit') ?>" class="text-info font-weight-bold text-xs">
                                                     Edit
                                                 </a>
                                                 |
@@ -92,7 +92,7 @@
                                                 </a>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs">
+                                                <a href="<?= base_url('SuratMasuk/edit') ?>" class="text-info font-weight-bold text-xs">
                                                     Edit
                                                 </a>
                                                 |
