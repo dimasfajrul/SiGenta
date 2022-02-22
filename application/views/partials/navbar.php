@@ -5,7 +5,7 @@
             </div>
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                    <a href="#" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="<?= base_url('Dokumentasi') ?>" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="ni ni-button-power me-sm-1"></i>
                         <span class="d-sm-inline d-none">Keluar</span>
                     </a>
