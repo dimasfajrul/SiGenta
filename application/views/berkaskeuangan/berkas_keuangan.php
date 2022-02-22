@@ -44,7 +44,7 @@
                                                     <td class="text-sm font-weight-bold mb-0"><?= $data->judul ?></td>
                                                     <td class="text-sm font-weight-bold mb-0"><?= $data->ro ?></td>
                                                     <td class="align-middle">
-                                                        <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                        <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" target="_blank">
                                                             Lihat berkas
                                                         </a>
                                                     </td>

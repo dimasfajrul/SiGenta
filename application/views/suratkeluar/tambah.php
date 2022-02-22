@@ -21,26 +21,25 @@
                             <div class="row pl-2">
                                 <form method="post" action="<?= site_url('SuratKeluar/tambah') ?>" enctype="multipart/form-data">
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Perihal</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan perihal ..." id="example-text-input">
-                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="perihal" id="perihal" class="form-control" type="text" placeholder="Masukkan perihal ...">
+                                                <?= form_error('perihal', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="example-search-input" class="form-control-label">No Surat</label>
-                                                <input name="nohp" id="nohp" class="form-control" type="search" placeholder="Masukkan no. surat ..." id="example-search-input">
-                                                <?= form_error('nohp', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="no" id="no" class="form-control" type="date" placeholder="Masukkan no. surat ...">
+                                                <?= form_error('no', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="example-search-input" class="form-control-label">Tanggal</label>
-                                                <input name="nohp" id="nohp" class="form-control" type="search" placeholder="Masukkan tanggal   ..." id="example-search-input">
-                                                <?= form_error('nohp', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="tanggal" id="tanggal" class="form-control" type="date" placeholder="Masukkan tanggal   ...">
+                                                <?= form_error('tanggal', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
@@ -48,8 +47,8 @@
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Link berkas</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan link berkas ..." id="example-text-input">
-                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="link" id="link" class="form-control" type="text" placeholder="Masukkan link berkas ...">
+                                                <?= form_error('link', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
