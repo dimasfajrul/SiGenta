@@ -24,15 +24,15 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Tujuan</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan tujuan ..." id="example-text-input">
-                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="tujuan" id="tujuan" class="form-control" type="text" placeholder="Masukkan tujuan ..." id="example-text-input">
+                                                <?= form_error('tujuan', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="example-search-input" class="form-control-label">Tanggal</label>
-                                                <input name="nohp" id="nohp" class="form-control" type="search" placeholder="Masukkan tanggal ..." id="example-search-input">
-                                                <?= form_error('nohp', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="tanggal" id="tanggal" class="form-control" type="date" placeholder="Masukkan tanggal ..." id="example-search-input">
+                                                <?= form_error('tanggal', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
@@ -40,8 +40,8 @@
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Link berkas</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan link berkas ..." id="example-text-input">
-                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="link" id="link" class="form-control" type="text" placeholder="Masukkan link berkas ..." id="example-text-input">
+                                                <?= form_error('link', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
