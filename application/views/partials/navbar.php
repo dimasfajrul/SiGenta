@@ -4,7 +4,7 @@
             <div class="ms-md-auto pe-md-3 d-flex align-items-center"></div>
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                    <a href="#" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="<?= base_url('Keuangan') ?>" class="nav-link text-body p-0" onclick="javascripst: return confirm('Anda yakin ingin keluar?')">
                         <i class="ni ni-button-power me-sm-1"></i>
                         <span class="d-sm-inline d-none">Keluar</span>
                     </a>
