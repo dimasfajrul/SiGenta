@@ -14,7 +14,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <h6>Nota Dinas </h6>
-                                    <a href="<?= base_url('DataIsu/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
+                                    <a href="<?= base_url('NotaDinas/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
                                     <button type="button" class="btn btn-outline-primary">Tabel Kendali</button>
                                 </div>
                             </div>
