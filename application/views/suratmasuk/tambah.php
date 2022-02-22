@@ -19,20 +19,20 @@
                         </div>
                         <div class="card-body pt-0 pb-2">
                             <div class="row pl-2">
-                                <form method="post" action="<?= site_url('Keuangan/tambah') ?>" enctype="multipart/form-data">
+                                <form method="post" action="<?= site_url('SuratMasuk/tambah') ?>" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Tanggal Masuk</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan tanggal masuk ..." id="example-text-input">
-                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="tanggal" id="tanggal" class="form-control" type="date" placeholder="Masukkan tanggal masuk ..." id="example-text-input">
+                                                <?= form_error('tanggal', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="example-search-input" class="form-control-label">Asal Surat</label>
-                                                <input name="nohp" id="nohp" class="form-control" type="search" placeholder="Masukkan asal surat ..." id="example-search-input">
-                                                <?= form_error('nohp', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="asal" id="asal" class="form-control" type="search" placeholder="Masukkan asal surat ..." id="example-search-input">
+                                                <?= form_error('asal', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
@@ -40,14 +40,14 @@
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Link berkas</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan link berkas ..." id="example-text-input">
-                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="link" id="link" class="form-control" type="text" placeholder="Masukkan link berkas ..." id="example-text-input">
+                                                <?= form_error('link', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group">
-                                            <a href="<?= base_url('BerkasLainLain') ?>" class="btn btn-icon btn-secondary">
+                                            <a href="<?= base_url('SuratMasuk') ?>" class="btn btn-icon btn-secondary">
                                                 <span class="btn-inner--text">Kembali</span>
                                             </a>
                                             <button class="btn btn-icon btn-info" type="submit">

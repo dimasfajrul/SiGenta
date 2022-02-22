@@ -32,75 +32,39 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    1
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('SuratMasuk/edit') ?>" class="text-info font-weight-bold text-xs">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    2
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('SuratMasuk/edit') ?>" class="text-info font-weight-bold text-xs">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    3
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('SuratMasuk/edit') ?>" class="text-info font-weight-bold text-xs">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        <?php if (!empty($surat)) {
+                                            $no = 1;
+                                            foreach ($surat as $data) { ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex px-2">
+                                                            <?= $no ?>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= date('d F Y', strtotime($data->tanggal)) ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->asal_surat ?></td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs">
+                                                            Lihat berkas
+                                                        </a>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= base_url('SuratMasuk/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
+                                                            Edit
+                                                        </a>
+                                                        |
+                                                        <a href="<?= base_url('SuratMasuk/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                            Hapus
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            <?php $no++;
+                                            } ?>
+                                        <?php } else { ?>
+                                            <tr>
+                                                <td colspan="5">No data(s) found...</td>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

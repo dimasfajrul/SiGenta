@@ -32,81 +32,45 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    1
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('Keuangan/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    2
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('Keuangan/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    3
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('Keuangan/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        <?php if (!empty($uang)) {
+                                            $no = 1;
+                                            foreach ($uang as $data) { ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex px-2">
+                                                            <?= $no ?>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->judul ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->ro ?></td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                            Lihat berkas
+                                                        </a>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= base_url('Keuangan/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                            Edit
+                                                        </a>
+                                                        |
+                                                        <a href="<?= base_url('Keuangan/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                            Hapus
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            <?php $no++;
+                                            } ?>
+                                        <?php } else { ?>
+                                            <tr>
+                                                <td colspan="5">No data(s) found...</td>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
             <?php $this->load->view('partials/footer'); ?>
