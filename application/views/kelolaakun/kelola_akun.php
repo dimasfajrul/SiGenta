@@ -13,9 +13,8 @@
                         <div class="card-header pb-0">
                             <div class="row">
                                 <div class="col-8">
-                                    <h6>Dokumentasi</h6>
-                                    <a href="<?= base_url('Dokumentasi/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
-                                    <button type="button" class="btn btn-outline-primary">Tabel Kendali</button>
+                                    <h6>Kelola Akun</h6>
+                                    <a href="<?= base_url('KelolaAkun/tambah') ?>" class="btn btn-primary" type="button">Tambah akun</a>
                                 </div>
                             </div>
                         </div>
@@ -25,10 +24,9 @@
                                     <thead>
                                         <tr>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Judul Dokumentasi</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Kegiatan</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Berkas</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Password</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -40,14 +38,10 @@
                                             </td>
                                             <td class="text-sm font-weight-bold mb-0">asdasd</td>
                                             <td class="text-sm font-weight-bold mb-0">asdasd</td>
+                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
                                             <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('Dokumentasi/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Edit
+                                                <a href="<?= base_url('KelolaAkun/detail') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                    Detail
                                                 </a>
                                                 |
                                                 <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
@@ -63,14 +57,11 @@
                                             </td>
                                             <td class="text-sm font-weight-bold mb-0">asdasd</td>
                                             <td class="text-sm font-weight-bold mb-0">asdasd</td>
+                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
+
                                             <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('Dokumentas/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Edit
+                                                <a href="<?= base_url('KelolaAkun/detail') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                    Detail
                                                 </a>
                                                 |
                                                 <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
@@ -86,14 +77,10 @@
                                             </td>
                                             <td class="text-sm font-weight-bold mb-0">asdasd</td>
                                             <td class="text-sm font-weight-bold mb-0">asdasd</td>
+                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
                                             <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('Dokumentasi/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Edit
+                                                <a href="<?= base_url('KelolaAkun/detail') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                    Detail
                                                 </a>
                                                 |
                                                 <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
