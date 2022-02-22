@@ -44,7 +44,7 @@
                                                     <td class="text-sm font-weight-bold mb-0"><?= date('d F Y', strtotime($data->tanggal)) ?></td>
                                                     <td class="text-sm font-weight-bold mb-0"><?= $data->asal_surat ?></td>
                                                     <td class="align-middle">
-                                                        <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs">
+                                                        <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" target="_blank">
                                                             Lihat berkas
                                                         </a>
                                                     </td>

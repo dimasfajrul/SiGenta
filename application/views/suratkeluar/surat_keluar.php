@@ -23,7 +23,7 @@
                             <div class="table-responsive">
                                 <table class="table align-items-center mb-0">
                                     <thead>
-                                    <tr>
+                                        <tr>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Perihal</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">No Surat</th>
@@ -33,78 +33,40 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="text-sm font-weight-bold mb-0">
-                                                    1
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">20/12/2021</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('SuratKeluar/edit') ?>" class="text-info font-weight-bold text-xs">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="text-sm font-weight-bold mb-0">
-                                                    2
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">20/12/2021</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('SuratKeluar/edit') ?>" class="text-info font-weight-bold text-xs">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="text-sm font-weight-bold mb-0"">
-                                                    3
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">20/12/2021</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('SuratKeluar/edit') ?>" class="text-info font-weight-bold text-xs">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        <?php if (!empty($surat)) {
+                                            $no = 1;
+                                            foreach ($surat as $data) { ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="text-sm font-weight-bold mb-0">
+                                                            <?= $no ?>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->perihal ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->no_surat ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= date('d F Y', strtotime($data->tanggal)) ?></td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" target="_blank">
+                                                            Lihat berkas
+                                                        </a>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= base_url('SuratKeluar/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
+                                                            Edit
+                                                        </a>
+                                                        |
+                                                        <a href="<?= base_url('SuratKeluar/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                            Hapus
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            <?php $no++;
+                                            } ?>
+                                        <?php } else { ?>
+                                            <tr>
+                                                <td colspan="6">No data(s) found...</td>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
