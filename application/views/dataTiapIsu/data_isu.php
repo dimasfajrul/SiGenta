@@ -15,9 +15,7 @@
                                 <div class="col-10">
                                     <h6>Data Tiap Isu</h6>
                                     <a href="<?= base_url('DataIsu/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
-                                </div>
-                                <div class="col-2">
-                                    <button class="btn btn-outline-primary btn-sm mb-0 text-end">View All</button>
+                                    <button type="button" class="btn btn-outline-primary">Tabel Kendali</button>
                                 </div>
                             </div>
                         </div>

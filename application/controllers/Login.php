@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Keuangan extends CI_Controller {
+class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('berkaskeuangan/berkas_keuangan');
+		$this->load->view('login/halaman_login');
 	}
 	
     public function tambah()

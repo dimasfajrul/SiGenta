@@ -13,7 +13,7 @@
                         <div class="card-header pb-0">
                             <div class="row">
                                 <div class="col-10">
-                                    <h6>Edit Data Isu</h6>
+                                    <h6>Edit Berkas Keuangan</h6>
                                 </div>
                             </div>
                         </div>
@@ -23,14 +23,14 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="example-text-input" class="form-control-label">Judul</label>
+                                                <label for="example-text-input" class="form-control-label">Judul Berkas</label>
                                                 <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan judul isu ..." id="example-text-input">
                                                 <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="example-search-input" class="form-control-label">Isu</label>
+                                                <label for="example-search-input" class="form-control-label">RO</label>
                                                 <input name="nohp" id="nohp" class="form-control" type="search" placeholder="Masukkan isu ..." id="example-search-input">
                                                 <?= form_error('nohp', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group">
-                                            <a href="<?= base_url('DataIsu') ?>" class="btn btn-icon btn-secondary">
+                                            <a href="<?= base_url('Keuangan') ?>" class="btn btn-icon btn-secondary">
                                                 <span class="btn-inner--text">Kembali</span>
                                             </a>
                                             <button class="btn btn-icon btn-info" type="submit">

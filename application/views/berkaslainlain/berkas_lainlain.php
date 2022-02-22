@@ -13,8 +13,8 @@
                         <div class="card-header pb-0">
                             <div class="row">
                                 <div class="col-8">
-                                    <h6>Berkas Keuangan</h6>
-                                    <a href="<?= base_url('Keuangan/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
+                                    <h6>Berkas Lain-lain</h6>
+                                    <a href="<?= base_url('BerkasLainLain/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
                                     <button type="button" class="btn btn-outline-primary">Tabel Kendali</button>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                                         <tr>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Judul Berkas</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">RO</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Keterangan</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Berkas</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
                                         </tr>
@@ -46,7 +46,7 @@
                                                 </a>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="<?= base_url('Keuangan/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="<?= base_url('BerkasLainLain/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit
                                                 </a>
                                                 |
@@ -69,7 +69,7 @@
                                                 </a>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="<?= base_url('Keuangan/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="<?= base_url('BerkasLainLain/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit
                                                 </a>
                                                 |
@@ -92,7 +92,7 @@
                                                 </a>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="<?= base_url('Keuangan/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit
                                                 </a>
                                                 |
