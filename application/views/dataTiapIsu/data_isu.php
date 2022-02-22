@@ -15,7 +15,13 @@
                                 <div class="col-10">
                                     <h6>Data Tiap Isu</h6>
                                     <a href="<?= base_url('DataIsu/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
+<<<<<<< HEAD
                                     <button type="button" class="btn btn-outline-primary">Tabel Kendali</button>
+=======
+                                </div>
+                                <div class="col-2">
+                                    <a href="" data-toggle="modal" data-target="#hapusModal" class="btn btn-outline-primary btn-sm mb-0 text-end">View All</a>
+>>>>>>> 284da5eb499cb1b9e2567199f573c0a40ceb7a0e
                                 </div>
                             </div>
                         </div>
@@ -32,76 +38,40 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    1
-                                                </div>
-                                            </td>
-                                            <td>asdasd</td>
-                                            <td>asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    2
-                                                </div>
-                                            </td>
-                                            <td>asdasd</td>
-                                            <td>asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    3
-                                                </div>
-                                            </td>
-                                            <td>asdasd</td>
-                                            <td>asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('DataIsu/edit') ?>" class="text-info font-weight-bold text-xs">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                        <?php if (!empty($isu)) {
+                                            $no = 1;
+                                            foreach ($isu as $data) { ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex px-2">
+                                                            <?= $no ?>
+                                                        </div>
+                                                    </td>
+                                                    <td><?= $data->judul ?></td>
+                                                    <td><?= $data->isu ?></td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" target="_blank">
+                                                            Lihat berkas
+                                                        </a>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= base_url('DataIsu/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
+                                                            Edit
+                                                        </a>
+                                                        |
+                                                        <a href="<?= base_url('DataIsu/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                            Hapus
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            <?php $no++;
+                                            } ?>
+                                        <?php } else { ?>
+                                            <tr>
+                                                <td colspan="5">No data(s) found...</td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>                                    
                                 </table>
                             </div>
                         </div>
@@ -129,3 +99,11 @@
                 </div>
             </div>
             <?php $this->load->view('partials/footer'); ?>
+            <script type="text/javascript">
+                function confirm_modal(delete_url) {
+                    $('#deleteModal').modal('show', {
+                        backdrop: 'static'
+                    });
+                    document.getElementById('delete_link').setAttribute('href', delete_url);
+                }
+            </script>
