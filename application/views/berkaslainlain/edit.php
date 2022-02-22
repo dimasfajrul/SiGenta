@@ -19,20 +19,22 @@
                         </div>
                         <div class="card-body pt-0 pb-2">
                             <div class="row pl-2">
-                                <form method="post" action="<?= site_url('BerkasLainLain/edit') ?>" enctype="multipart/form-data">
+                                <form method="post" action="<?= site_url('BerkasLainLain/edit/' . $detail[0]->id) ?>" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Judul Berkas</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan judul kerkas ..." id="example-text-input">
-                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="id" id="id" class="form-control" type="hidden" placeholder="Masukkan judul kerkas ..." value="<?= $detail[0]->id ?>">
+                                                <input name="created_at" id="created_at" class="form-control" type="hidden" placeholder="Masukkan judul kerkas ..." value="<?= $detail[0]->created_at ?>">
+                                                <input name="judul" id="judul" class="form-control" type="text" placeholder="Masukkan judul kerkas ..." value="<?= $detail[0]->judul ?>">
+                                                <?= form_error('judul', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="example-search-input" class="form-control-label">Keterangan</label>
-                                                <input name="nohp" id="nohp" class="form-control" type="search" placeholder="Masukkan keterangan ..." id="example-search-input">
-                                                <?= form_error('nohp', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="keterangan" id="keterangan" class="form-control" type="search" placeholder="Masukkan keterangan ..." value="<?= $detail[0]->keterangan ?>">
+                                                <?= form_error('keterangan', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
@@ -40,8 +42,8 @@
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Link berkas</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan link berkas ..." id="example-text-input">
-                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="link" id="link" class="form-control" type="text" placeholder="Masukkan link berkas ..." value="<?= $detail[0]->link ?>">
+                                                <?= form_error('link', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>

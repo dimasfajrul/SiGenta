@@ -30,7 +30,7 @@ class Dokumentasi extends CI_Controller
 	public function tambah()
 	{
 		$this->form_validation->set_rules('judul', 'Judul', 'required');
-		$this->form_validation->set_rules('kegiatan', 'KEgiatan', 'required|trim');
+		$this->form_validation->set_rules('kegiatan', 'Kegiatan', 'required|trim');
 		$this->form_validation->set_rules('link', 'Link Berkas', 'required|trim|max_length[255]');
 
 		if ($this->form_validation->run() == false) {
@@ -75,7 +75,7 @@ class Dokumentasi extends CI_Controller
 	public function edit($id = null)
 	{
 		$this->form_validation->set_rules('judul', 'Judul', 'required');
-		$this->form_validation->set_rules('kegiatan', 'KEgiatan', 'required|trim');
+		$this->form_validation->set_rules('kegiatan', 'Kegiatan', 'required|trim');
 		$this->form_validation->set_rules('link', 'Link Berkas', 'required|trim|max_length[255]');
 
 		if ($this->form_validation->run() == false) {
