@@ -101,12 +101,47 @@
                                                 </a>
                                             </td>
                                         </tr>
+
+                                        <?php if (!empty($dok)) {
+                                            $no = 1;
+                                            foreach ($dok as $data) { ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex px-2">
+                                                            <?= $no ?>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->judul ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->kegiatan ?></td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" target="_blank">
+                                                            Lihat berkas
+                                                        </a>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= base_url('Dokumentasi/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
+                                                            Edit
+                                                        </a>
+                                                        |
+                                                        <a href="<?= base_url('Dokumentasi/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                            Hapus
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            <?php $no++;
+                                            } ?>
+                                        <?php } else { ?>
+                                            <tr>
+                                                <td colspan="5">No data(s) found...</td>
+                                            </tr>
+                                        <?php } ?>
+
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
             <?php $this->load->view('partials/footer'); ?>
