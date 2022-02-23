@@ -10,6 +10,18 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('dashboard');
+		$data = array();
+
+		//Flashdata
+		if ($this->session->userdata('success_msg')) {
+			$data['success_msg'] = $this->session->userdata('success_msg');
+			$this->session->unset_userdata('success_msg');
+		}
+		if ($this->session->userdata('error_msg')) {
+			$data['error_msg'] = $this->session->userdata('error_msg');
+			$this->session->unset_userdata('error_msg');
+		}
+
+		$this->load->view('dashboard', $data);
 	}
 }

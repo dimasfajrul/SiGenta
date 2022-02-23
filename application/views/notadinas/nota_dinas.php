@@ -7,6 +7,12 @@
         <?php $this->load->view('partials/navbar'); ?>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
+            <?php if (!empty($success_msg)) { ?>
+                <?php echo $success_msg; ?>
+                <?php if (!empty($error_msg)) { ?>
+                    <?php echo $error_msg; ?>
+                <?php } ?>
+            <?php } ?>
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-4">

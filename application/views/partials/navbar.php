@@ -13,9 +13,3 @@
         </div>
     </div>
 </nav>
-<?php if (!empty($success_msg)) { ?>
-    <?php echo $success_msg; ?>
-    <?php if (!empty($error_msg)) { ?>
-        <?php echo $error_msg; ?>
-    <?php } ?>
-<?php } ?>
