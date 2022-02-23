@@ -7,6 +7,7 @@ class SuratKeluar extends CI_Controller
 		parent::__construct();
 		$this->load->model('SKeluarModel');
 		$this->load->library('form_validation');
+		cek_session();
 	}
 
 	public function index()

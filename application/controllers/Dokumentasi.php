@@ -7,6 +7,7 @@ class Dokumentasi extends CI_Controller
 		parent::__construct();
 		$this->load->model('DokModel');
 		$this->load->library('form_validation');
+		cek_session();
 	}
 
 	public function index()

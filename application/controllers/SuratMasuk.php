@@ -6,6 +6,7 @@ class SuratMasuk extends CI_Controller {
 		parent::__construct();
 		$this->load->model('SMasukModel');
 		$this->load->library('form_validation');
+		cek_session();
 	}
 
 	public function index()

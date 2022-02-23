@@ -7,6 +7,7 @@ class BerkasLainLain extends CI_Controller
 		parent::__construct();
 		$this->load->model('EtcModel');
 		$this->load->library('form_validation');
+		cek_session();
 	}
 
 	public function index()
