@@ -21,18 +21,29 @@
                             <div class="row pl-2">
                                 <form method="post" action="<?= site_url('KelolaAkun/tambah') ?>" enctype="multipart/form-data">
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Nama</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan nama ..." id="example-text-input">
+                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan nama ...">
                                                 <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="example-search-input" class="form-control-label">Email</label>
-                                                <input name="nohp" id="nohp" class="form-control" type="search" placeholder="Masukkan email ..." id="example-search-input">
-                                                <?= form_error('nohp', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="email" id="email" class="form-control" type="text" placeholder="Masukkan email ...">
+                                                <?= form_error('email', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="example-search-input" class="form-control-label">Level</label>
+                                                <select name="role" id="role" class="form-control">
+                                                    <option value="">--- Pilih level akun ---</option>
+                                                    <option value="0">Admin</option>
+                                                    <option value="1">User</option>
+                                                </select>
+                                                <?= form_error('role', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
@@ -40,8 +51,15 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Password</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan link password ..." id="example-text-input">
-                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="password1" id="password1" class="form-control" type="password" placeholder="Masukkan link password ...">
+                                                <?= form_error('password1', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="example-text-input" class="form-control-label">Konfirmasi Password</label>
+                                                <input name="password2" id="password2" class="form-control" type="password" placeholder="Masukkan link password ...">
+                                                <?= form_error('password2', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
@@ -62,28 +80,3 @@
                 </div>
             </div>
             <?php $this->load->view('partials/footer'); ?>
-        </div>
-    </main>
-
-    <!--   Core JS Files   -->
-    <script src="<?= base_url('') ?>assets/js/core/popper.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/core/bootstrap.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/chartjs.min.js"></script>
-    <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
-    </script>
-    <!-- Github buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="<?= base_url('') ?>assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
-</body>
-
-</html>

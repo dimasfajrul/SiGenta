@@ -6,86 +6,75 @@
         <!-- Navbar -->
         <?php $this->load->view('partials/navbar'); ?>
         <!-- End Navbar -->
-        <div class="container-fluid py-4">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card mb-4">
-                        <div class="card-header pb-0">
-                            <div class="row">
-                                <div class="col-10">
-                                    <h6>Tambah Dokumentasi</h6>
-                                    <a href="<?= base_url('') ?>" class="btn btn-success" type="button">Aktif</a>
-                                    <button type="button" class="btn btn-outline-danger">Non Aktif</button>
+        <form action="" method="POST">
+            <div class="container-fluid mt--6">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card bg-white">
+                            <div class="card-header bg-transparent">
+                                <button class="btn btn-icon btn-info" type="submit" name="aktif" id="aktif">
+                                    <span class="btn-inner--text">Aktif</span>
+                                </button>
+                                <button class="btn btn-outline-danger" type="submit" name="mati" id="mati">
+                                    <span class="btn-inner--text">Non - Aktif</span>
+                                </button>
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <?php foreach ($user as $user) { ?>
+                                            <div class="row">
+                                                <div class="my-auto col-sm-2">
+                                                    <p>Nama Lengkap:</p>
+                                                </div>
+                                                <div class="my-auto col-sm-9">
+                                                    <p><?= $user->nama; ?></p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="my-auto col-sm-2">
+                                                    <p>Email:</p>
+                                                </div>
+                                                <div class="my-auto col-sm-9">
+                                                    <p><?= $user->email; ?></p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="my-auto col-sm-2">
+                                                    <p>Status:</p>
+                                                </div>
+                                                <div class="my-auto col-sm-9">
+                                                    <p><?php
+                                                        if ($user->status == 0) {
+                                                            echo '<span class="badge bg-gradient-danger">Non - Aktif</span>';
+                                                        } elseif ($user->status == 1) {
+                                                            echo '<span class="badge bg-gradient-success">Aktif</span>';
+                                                        }
+                                                        ?></p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="my-auto col-sm-2">
+                                                    <p>Level:</p>
+                                                </div>
+                                                <div class="my-auto col-sm-9">
+                                                    <p><?php
+                                                        if ($user->role == 0) {
+                                                            echo '<span class="badge bg-gradient-success">Admin</span>';
+                                                        } elseif ($user->role == 1) {
+                                                            echo '<span class="badge bg-gradient-secondary">User</span>';
+                                                        }
+                                                        ?></p>
+                                                </div>
+                                            </div>
+                                            <a href="<?= base_url("KelolaAkun") ?>" class="btn btn-icon btn-danger" type="button" style="margin-bottom: 0px">
+                                                <span class="btn-inner--text">Kembali</span>
+                                            </a>
+                                    </div>
+                                <?php } ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body pt-0 pb-2">
-                            <div class="row pl-2">
-                                <form method="post" action="<?= site_url('Dokumentasi/tambah') ?>" enctype="multipart/form-data">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="example-text-input" class="form-control-label">Judul</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan judul ..." id="example-text-input">
-                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="example-search-input" class="form-control-label">Kegiatan</label>
-                                                <input name="nohp" id="nohp" class="form-control" type="search" placeholder="Masukkan Kegiatan ..." id="example-search-input">
-                                                <?= form_error('nohp', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <label for="example-text-input" class="form-control-label">Link berkas</label>
-                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan link berkas ..." id="example-text-input">
-                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <a href="<?= base_url('KelolaAkun') ?>" class="btn btn-icon btn-secondary">
-                                                <span class="btn-inner--text">Kembali</span>
-                                            </a>
-                                            <button class="btn btn-icon btn-info" type="submit">
-                                                <span class="btn-inner--text">Simpan</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php $this->load->view('partials/footer'); ?>
-        </div>
-    </main>
-
-    <!--   Core JS Files   -->
-    <script src="<?= base_url('') ?>assets/js/core/popper.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/core/bootstrap.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/chartjs.min.js"></script>
-    <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
-    </script>
-    <!-- Github buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="<?= base_url('') ?>assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
-</body>
-
-</html>
+                        <?php $this->load->view('partials/footer'); ?>
+        </form

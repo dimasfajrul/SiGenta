@@ -35,56 +35,58 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('SuratMasuk') ?>">
-                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"> 
-                     <i class="ni ni-email-83 text-dark"></i>
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-email-83 text-dark"></i>
                     </div>
                     <span class="nav-link-text ms-1">Surat Masuk</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('SuratKeluar') ?>">
-                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"> 
-                     <i class="ni ni-bullet-list-67 text-dark"></i>
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-bullet-list-67 text-dark"></i>
                     </div>
                     <span class="nav-link-text ms-1">Surat Keluar</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('NotaDinas') ?>">
-                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"> 
-                     <i class="ni ni-single-copy-04 text-dark"></i>
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-single-copy-04 text-dark"></i>
                     </div>
                     <span class="nav-link-text ms-1">Nota Dinas</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('Dokumentasi') ?>">
-                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"> 
-                     <i class="ni ni-album-2 text-dark"></i>
-                </div>
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-album-2 text-dark"></i>
+                    </div>
                     <span class="nav-link-text ms-1">Dokumentasi</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('BerkasLainLain') ?>">
-                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"> 
-                     <i class="ni ni-books text-dark"></i>
-                </div>
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-books text-dark"></i>
+                    </div>
                     <span class="nav-link-text ms-1">Berkas Lain Lain</span>
                 </a>
             </li>
+            <?php if ($this->session->userdata('role') == 0) { ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('KelolaAkun') ?>">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-circle-08 text-dark"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Kelola Akun</span>
+                    </a>
+                </li>
+            <?php } ?>
 
 
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('KelolaAkun') ?>">
-                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"> 
-                     <i class="ni ni-circle-08 text-dark"></i>
-                </div>
-                    <span class="nav-link-text ms-1">Kelola Akun</span>
-                </a>
             </li>
 
             <li class="nav-item">

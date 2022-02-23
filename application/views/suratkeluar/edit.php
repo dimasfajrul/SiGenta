@@ -21,7 +21,7 @@
                             <div class="row pl-2">
                                 <form method="post" action="<?= site_url('SuratKeluar/edit/' . $detail[0]->id) ?>" enctype="multipart/form-data">
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Perihal</label>
                                                 <input name="id" id="id" class="form-control" type="hidden" value="<?= $detail[0]->id ?>">
@@ -30,15 +30,14 @@
                                                 <?= form_error('perihal', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="example-search-input" class="form-control-label">No. Surat</label>
                                                 <input name="no" id="no" class="form-control" type="text" placeholder="Masukkan no surat   ..." value="<?= $detail[0]->no_surat ?>">
                                                 <?= form_error('no', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="example-search-input" class="form-control-label">Tanggal</label>
                                                 <input name="tanggal" id="tanggal" class="form-control" type="date" placeholder="Masukkan tanggal   ..." value="<?= $detail[0]->tanggal ?>">
@@ -72,28 +71,3 @@
                 </div>
             </div>
             <?php $this->load->view('partials/footer'); ?>
-        </div>
-    </main>
-
-    <!--   Core JS Files   -->
-    <script src="<?= base_url('') ?>assets/js/core/popper.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/core/bootstrap.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/chartjs.min.js"></script>
-    <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
-    </script>
-    <!-- Github buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="<?= base_url('') ?>assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
-</body>
-
-</html>

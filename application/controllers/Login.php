@@ -46,7 +46,8 @@ class Login extends CI_Controller
 						'nama'			=> $user['nama'],
 						'email'			=> $user['email'],
 						'password'		=> $user['password'],
-						'status' 		=> $user['status']
+						'status' 		=> $user['status'],
+						'role' 			=> $user['role']
 					];
 					$this->session->set_userdata($data);
 					$this->session->set_flashdata(
@@ -107,15 +108,16 @@ class Login extends CI_Controller
 		$this->session->unset_userdata('email');
 		$this->session->unset_userdata('password');
 		$this->session->unset_userdata('status');
+		$this->session->unset_userdata('role');
 		$this->session->set_flashdata(
 			'success_msg',
 			'<div class="alert alert-success alert-dismissible fade show" role="alert">
-				<span class="alert-icon"><i class="ni ni-like-2"></i></span>
-				<span class="alert-text"><strong>Anda berhasil keluar!</strong> Silahkan masuk kembali untuk melanjutkan!</span>
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>'
+			<span class="alert-icon"><i class="ni ni-like-2"></i></span>
+			<span class="alert-text"><strong>Anda berhasil keluar!</strong> Silahkan login untuk melanjutkan kembali!</span>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>'
 		);
 		redirect('Login');
 	}

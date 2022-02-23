@@ -32,68 +32,58 @@
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Password</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Role</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Bergabung</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Diperbaharui</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    1
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('KelolaAkun/detail') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Detail
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    2
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('KelolaAkun/detail') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Detail
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    3
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('KelolaAkun/detail') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Detail
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        <?php if (!empty($user)) {
+                                            $no = 1;
+                                            foreach ($user as $data) { ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex px-2">
+                                                            <?= $no ?>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->nama ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->email ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0">
+                                                        <?php
+                                                        if ($data->role == 0) {
+                                                            echo '<span class="badge bg-gradient-success">Admin</span>';
+                                                        } else {
+                                                            echo '<span class="badge bg-gradient-secondary">User</span>';
+                                                        }
+                                                        ?>
+                                                    </td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->created_at ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->updated_at ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0">
+                                                        <?php
+                                                        if ($data->status == 0) {
+                                                            echo '<span class="badge bg-gradient-danger">Non - Aktif</span>';
+                                                        } else {
+                                                            echo '<span class="badge bg-gradient-info">Aktif</span>';
+                                                        }
+                                                        ?>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= base_url('KelolaAkun/detail/' . $data->id) ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                            Detail
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            <?php $no++;
+                                            } ?>
+                                        <?php } else { ?>
+                                            <tr>
+                                                <td colspan="7">No data(s) found...</td>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

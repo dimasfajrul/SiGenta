@@ -32,8 +32,13 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="example-search-input" class="form-control-label">Isu</label>
-                                                <input name="ro" id="ro" class="form-control" type="search" placeholder="Masukkan RO ..." value="<?= $detail[0]->ro ?>">
+                                                <label for="example-search-input" class="form-control-label">RO</label>
+                                                <select name="ro" id="ro" class="form-control">
+                                                    <option value="<?= $detail[0]->ro ?>"><?= $detail[0]->ro ?></option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
                                                 <?= form_error('ro', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -64,28 +69,4 @@
                 </div>
             </div>
             <?php $this->load->view('partials/footer'); ?>
-        </div>
-    </main>
-
-    <!--   Core JS Files   -->
-    <script src="<?= base_url('') ?>assets/js/core/popper.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/core/bootstrap.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <script src="<?= base_url('') ?>assets/js/plugins/chartjs.min.js"></script>
-    <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
-    </script>
-    <!-- Github buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="<?= base_url('') ?>assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
-</body>
-
-</html>
+        

@@ -20,7 +20,9 @@
                             <div class="row">
                                 <div class="col-8">
                                     <h6>Berkas Lain-lain</h6>
-                                    <a href="<?= base_url('BerkasLainLain/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
+                                    <?php if ($this->session->userdata('role') == 0) { ?>
+                                        <a href="<?= base_url('BerkasLainLain/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
+                                    <?php } ?>
                                     <button type="button" class="btn btn-outline-primary">Tabel Kendali</button>
                                 </div>
                             </div>
@@ -34,7 +36,9 @@
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Judul Berkas</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Keterangan</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Berkas</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
+                                            <?php if ($this->session->userdata('role') == 0) { ?>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
+                                            <?php } ?>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -54,15 +58,17 @@
                                                             Lihat berkas
                                                         </a>
                                                     </td>
-                                                    <td class="align-middle">
-                                                        <a href="<?= base_url('BerkasLainLain/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                        |
-                                                        <a href="<?= base_url('Dokumentasi/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
+                                                    <?php if ($this->session->userdata('role') == 0) { ?>
+                                                        <td class="align-middle">
+                                                            <a href="<?= base_url('BerkasLainLain/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                                Edit
+                                                            </a>
+                                                            |
+                                                            <a href="<?= base_url('Dokumentasi/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                                Hapus
+                                                            </a>
+                                                        </td>
+                                                    <?php } ?>
                                                 </tr>
                                             <?php $no++;
                                             } ?>

@@ -20,7 +20,9 @@
                             <div class="row">
                                 <div class="col-8">
                                     <h6>Dokumentasi</h6>
-                                    <a href="<?= base_url('Dokumentasi/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
+                                    <?php if ($this->session->userdata('role') == 0) { ?>
+                                        <a href="<?= base_url('Dokumentasi/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
+                                    <?php } ?>
                                     <button type="button" class="btn btn-outline-primary">Tabel Kendali</button>
                                 </div>
                             </div>
@@ -34,80 +36,12 @@
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Judul Dokumentasi</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Kegiatan</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Berkas</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
+                                            <?php if ($this->session->userdata('role') == 0) { ?>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
+                                            <?php } ?>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    1
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('Dokumentasi/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    2
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('Dokumentas/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    3
-                                                </div>
-                                            </td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="text-sm font-weight-bold mb-0">asdasd</td>
-                                            <td class="align-middle">
-                                                <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Lihat berkas
-                                                </a>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="<?= base_url('Dokumentasi/edit') ?>" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Edit
-                                                </a>
-                                                |
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                    Hapus
-                                                </a>
-                                            </td>
-                                        </tr>
-
                                         <?php if (!empty($dok)) {
                                             $no = 1;
                                             foreach ($dok as $data) { ?>
@@ -124,15 +58,17 @@
                                                             Lihat berkas
                                                         </a>
                                                     </td>
-                                                    <td class="align-middle">
-                                                        <a href="<?= base_url('Dokumentasi/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
-                                                            Edit
-                                                        </a>
-                                                        |
-                                                        <a href="<?= base_url('Dokumentasi/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
-                                                            Hapus
-                                                        </a>
-                                                    </td>
+                                                    <?php if ($this->session->userdata('role') == 0) { ?>
+                                                        <td class="align-middle">
+                                                            <a href="<?= base_url('Dokumentasi/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
+                                                                Edit
+                                                            </a>
+                                                            |
+                                                            <a href="<?= base_url('Dokumentasi/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                                Hapus
+                                                            </a>
+                                                        </td>
+                                                    <?php } ?>
                                                 </tr>
                                             <?php $no++;
                                             } ?>
@@ -141,7 +77,6 @@
                                                 <td colspan="5">No data(s) found...</td>
                                             </tr>
                                         <?php } ?>
-
                                     </tbody>
                                 </table>
                             </div>
