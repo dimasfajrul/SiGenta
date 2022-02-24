@@ -101,6 +101,15 @@
                         <span class="nav-link-text ms-1">Berita Highlight</span>
                     </a>
                 </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('AnggaranBiaya') ?>">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-chart-bar-32 text-dark"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Anggaran Biaya</span>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('KelolaAkun') ?>">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
