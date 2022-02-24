@@ -74,6 +74,14 @@
             </li>
             <?php if ($this->session->userdata('role') == 0) { ?>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('NewUpdate') ?>">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-archive-2 text-dark"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">New Update</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('KelolaAkun') ?>">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-circle-08 text-dark"></i>
@@ -82,7 +90,6 @@
                     </a>
                 </li>
             <?php } ?>
-
 
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
