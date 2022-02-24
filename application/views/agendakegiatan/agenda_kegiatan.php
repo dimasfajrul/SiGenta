@@ -20,11 +20,7 @@
                             <div class="row">
                                 <div class="col-8">
                                     <h6>Agenda Kegiatan</h6>
-                                    <?php if ($pin != null) { ?>
-                                        <button class="btn btn-primary" type="button" disabled>Tambah Agenda Kegiatan</button>
-                                    <?php } else { ?>
-                                        <a href="<?= base_url('AgendaKegiatan/tambah') ?>" class="btn btn-primary" type="button">Tambah Agenda</a>
-                                    <?php } ?>
+                                    <a href="<?= base_url('AgendaKegiatan/tambah') ?>" class="btn btn-primary" type="button">Tambah Agenda</a>
                                 </div>
                             </div>
                         </div>
@@ -42,38 +38,42 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php if (!empty($pin)) {
+                                        <?php if (!empty($agenda)) {
                                             $no = 1;
-                                            foreach ($pin as $data) { ?>
+                                            foreach ($agenda as $data) { ?>
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex px-2">
                                                             <?= $no ?>
                                                         </div>
                                                     </td>
-                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->agenda ?></td>
-                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->waktu ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><i class="<?= $data->icon ?>"></i> <?= $data->agenda ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= date('d F Y', strtotime($data->tanggal)) . ', ' . $data->waktu ?></td>
                                                     <td class="text-sm font-weight-bold mb-0"><?= $data->tempat ?></td>
                                                     <td class="align-middle">
-                                                        <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" target="_blank">
-                                                            Link
-                                                        </a>
+                                                        <?php if ($data->link != null) { ?>
+                                                            <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" target="_blank">
+                                                                Link
+                                                            </a>
+                                                        <?php } else { ?>
+                                                            <i class="ni ni-fat-delete"></i>
+                                                        <?php } ?>
                                                     </td>
                                                     <td class="align-middle">
-                                                    <a href="<?= base_url('BeritaHighlight/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
-                                                        Edit
-                                                    </a>
-                                                    |
-                                                    <a href="<?= base_url('BeritaHighlight/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
-                                                        Hapus
-                                                    </a>
+                                                        <a href="<?= base_url('AgendaKEgiatan/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
+                                                            Edit
+                                                        </a>
+                                                        |
+                                                        <a href="<?= base_url('AgendaKEgiatan/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                            Hapus
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             <?php $no++;
                                             } ?>
                                         <?php } else { ?>
                                             <tr>
-                                                <td colspan="5">No data(s) found...</td>
+                                                <td colspan="6">No data(s) found...</td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>

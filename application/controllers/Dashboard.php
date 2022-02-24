@@ -8,6 +8,7 @@ class Dashboard extends CI_Controller {
 		$this->load->model('PinModel');
 		$this->load->model('BeritaModel');
 		$this->load->model('DashboardModel');
+		$this->load->model('AgendaModel');
 		cek_session();
 	}
 
@@ -31,6 +32,7 @@ class Dashboard extends CI_Controller {
         $data['notadinas']      = $this->DashboardModel->data_notadinas();
 		$data['berita'] 		= $this->BeritaModel->read();
 		$data['pin'] 			= $this->PinModel->read();
+		$data['agenda'] 		= $this->AgendaModel->sort();
 
 		$this->load->view('dashboard', $data);
 	}

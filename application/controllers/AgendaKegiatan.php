@@ -5,7 +5,7 @@ class AgendaKegiatan extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('EtcModel');
+		$this->load->model('AgendaModel');
 		$this->load->library('form_validation');
 		cek_session();
 	}
@@ -24,33 +24,40 @@ class AgendaKegiatan extends CI_Controller
 			$this->session->unset_userdata('error_msg');
 		}
 
-		$data['dok'] = $this->EtcModel->read();
+		$data['agenda'] = $this->AgendaModel->read();
 		$this->load->view('agendakegiatan/agenda_kegiatan', $data);
 	}
 
 	public function tambah()
 	{
-		$this->form_validation->set_rules('judul', 'Judul', 'required');
-		$this->form_validation->set_rules('keterangan', 'Keterangan', 'required|trim');
-		$this->form_validation->set_rules('link', 'Link Berkas', 'required|trim|max_length[255]');
+		$this->form_validation->set_rules('agenda', 'Agenda', 'required|trim');
+		$this->form_validation->set_rules('waktu', 'Waktu', 'required');
+		$this->form_validation->set_rules('tanggal', 'Tanggal', 'required');
+		$this->form_validation->set_rules('icon', 'Jenis Kegiatan', 'required');
+		$this->form_validation->set_rules('tempat', 'Tempat Kegiatan', 'required|trim');
+		$this->form_validation->set_rules('link', 'Link Meeting', 'trim|max_length[255]');
 
 		if ($this->form_validation->run() == false) {
 			$this->load->view('agendakegiatan/tambah');
 		} else {
 			$dataPost = array(
 				'id'			=> '',
-				'judul'			=> $this->input->post('judul'),
-				'keterangan'	=> $this->input->post('keterangan'),
+				'agenda'		=> $this->input->post('agenda'),
+				'waktu'			=> $this->input->post('waktu'),
+				'tanggal'		=> $this->input->post('tanggal'),
+				'icon'			=> $this->input->post('icon'),
+				'tempat'		=> $this->input->post('tempat'),
 				'link'			=> $this->input->post('link'),
+				'status'		=> 1,
 				'created_at'	=> date('Y-m-d H:i:s'),
 				'updated_at'	=> date('Y-m-d H:i:s')
 			);
-			if ($this->EtcModel->create($dataPost)) {
+			if ($this->AgendaModel->create($dataPost)) {
 				$this->session->set_flashdata(
 					'success_msg',
 					'<div class="alert alert-success alert-dismissible fade show" role="alert">
 					<span class="alert-icon"><i class="ni ni-like-2"></i></span>
-					<span class="alert-text"><strong>Selamat!</strong> Berkas berhasil ditambahkan!</span>
+					<span class="alert-text"><strong>Selamat!</strong> Agenda berhasil ditambahkan!</span>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -62,7 +69,7 @@ class AgendaKegiatan extends CI_Controller
 					'error_msg',
 					'<div class="alert alert-danger alert-dismissible fade show" role="alert">
 					<span class="alert-icon"><i class="ni ni-like-2"></i></span>
-					<span class="alert-text"><strong>Maaf!</strong> Berkas gagal ditambahkan!</span>
+					<span class="alert-text"><strong>Maaf!</strong> Agenda gagal ditambahkan!</span>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -75,19 +82,26 @@ class AgendaKegiatan extends CI_Controller
 
 	public function edit($id = null)
 	{
-		$this->form_validation->set_rules('judul', 'Judul', 'required');
-		$this->form_validation->set_rules('keterangan', 'Keterangan', 'required|trim');
-		$this->form_validation->set_rules('link', 'Link Berkas', 'required|trim|max_length[255]');
+		$this->form_validation->set_rules('agenda', 'Agenda', 'required|trim');
+		$this->form_validation->set_rules('waktu', 'Waktu', 'required');
+		$this->form_validation->set_rules('tanggal', 'Tanggal', 'required');
+		$this->form_validation->set_rules('icon', 'Jenis Kegiatan', 'required');
+		$this->form_validation->set_rules('tempat', 'Tempat Kegiatan', 'required|trim');
+		$this->form_validation->set_rules('link', 'Link Meeting', 'trim|max_length[255]');
 
 		if ($this->form_validation->run() == false) {
-			$data['detail']	= $this->EtcModel->detail($id);
+			$data['detail']	= $this->AgendaModel->detail($id);
 			$this->load->view('agendakegiatan/edit', $data);
 		} else {
-			$update = $this->EtcModel->update(array(
+			$update = $this->AgendaModel->update(array(
 				'id'			=> $this->input->post('id'),
-				'judul'			=> $this->input->post('judul'),
-				'keterangan'	=> $this->input->post('keterangan'),
+				'agenda'		=> $this->input->post('agenda'),
+				'waktu'			=> $this->input->post('waktu'),
+				'tanggal'		=> $this->input->post('tanggal'),
+				'icon'			=> $this->input->post('icon'),
+				'tempat'		=> $this->input->post('tempat'),
 				'link'			=> $this->input->post('link'),
+				'status'		=> 1,
 				'created_at'	=> $this->input->post('created_at'),
 				'updated_at'	=> date('Y-m-d H:i:s')
 			), $id);
@@ -96,7 +110,7 @@ class AgendaKegiatan extends CI_Controller
 					'success_msg',
 					'<div class="alert alert-success alert-dismissible fade show" role="alert">
 					<span class="alert-icon"><i class="ni ni-like-2"></i></span>
-					<span class="alert-text"><strong>Selamat!</strong> Berkas berhasil diubah!</span>
+					<span class="alert-text"><strong>Selamat!</strong> Agenda berhasil diubah!</span>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -108,7 +122,7 @@ class AgendaKegiatan extends CI_Controller
 					'error_msg',
 					'<div class="alert alert-danger alert-dismissible fade show" role="alert">
 					<span class="alert-icon"><i class="ni ni-like-2"></i></span>
-					<span class="alert-text"><strong>Maaf!</strong> Berkas gagal diubah!</span>
+					<span class="alert-text"><strong>Maaf!</strong> Agenda gagal diubah!</span>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -121,7 +135,7 @@ class AgendaKegiatan extends CI_Controller
 
 	public function hapus($id)
 	{
-		$delete = $this->EtcModel->delete($id);
+		$delete = $this->AgendaModel->delete($id);
 		if ($delete) {
 			$this->session->set_flashdata(
 				'success_msg',

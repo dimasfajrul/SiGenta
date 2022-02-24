@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2022 at 08:21 AM
+-- Generation Time: Feb 24, 2022 at 10:17 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -30,10 +30,36 @@ SET time_zone = "+00:00";
 CREATE TABLE `data_agenda` (
   `id` int(3) NOT NULL,
   `agenda` varchar(100) NOT NULL,
-  `waktu` time NOT NULL,
+  `waktu` time NOT NULL DEFAULT current_timestamp(),
+  `tanggal` date NOT NULL,
   `tempat` varchar(100) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `icon` varchar(100) NOT NULL,
+  `status` int(1) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_agenda`
+--
+
+INSERT INTO `data_agenda` (`id`, `agenda`, `waktu`, `tanggal`, `tempat`, `link`, `icon`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Halo gess', '08:00:00', '2022-02-24', 'WFH', 'https://www.youtube.com/watch?v=lQVIVX5iHkU', 'ni ni-laptop text-success', 1, '2022-02-24 08:39:44', '2022-02-24 09:09:55'),
+(3, 'asdasd', '07:30:00', '2022-02-25', 'WFO', 'https://www.youtube.com/watch?v=lQVIVX5iHkU', 'ni ni-calendar-grid-58 text-danger', 1, '2022-02-24 08:51:37', '2022-02-24 09:10:01'),
+(4, 'asdasd', '09:00:00', '2022-02-11', 'WFH', 'https://www.youtube.com/watch?v=lQVIVX5iHkU', 'ni ni-satisfied text-info', 1, '2022-02-24 09:10:24', '2022-02-24 09:10:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_anggaran`
+--
+
+CREATE TABLE `data_anggaran` (
+  `id` int(1) NOT NULL,
+  `tahun` year(4) NOT NULL,
+  `nama_anggaran` varchar(100) NOT NULL,
+  `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -264,6 +290,12 @@ ALTER TABLE `data_agenda`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `data_anggaran`
+--
+ALTER TABLE `data_anggaran`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `data_berkaslain`
 --
 ALTER TABLE `data_berkaslain`
@@ -331,7 +363,13 @@ ALTER TABLE `data_user`
 -- AUTO_INCREMENT for table `data_agenda`
 --
 ALTER TABLE `data_agenda`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `data_anggaran`
+--
+ALTER TABLE `data_anggaran`
+  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `data_berkaslain`
