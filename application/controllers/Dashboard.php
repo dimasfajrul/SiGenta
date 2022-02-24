@@ -5,6 +5,7 @@ class Dashboard extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('DashboardModel');
 		cek_session();
 	}
 
@@ -21,6 +22,11 @@ class Dashboard extends CI_Controller {
 			$data['error_msg'] = $this->session->userdata('error_msg');
 			$this->session->unset_userdata('error_msg');
 		}
+
+		$data['isu']     		= $this->DashboardModel->data_isu();
+        $data['suratkeluar']    = $this->DashboardModel->data_suratkeluar();
+        $data['suratmasuk'] 	= $this->DashboardModel->data_suratmasuk();
+        $data['notadinas']      = $this->DashboardModel->data_notadinas();
 
 		$this->load->view('dashboard', $data);
 	}
