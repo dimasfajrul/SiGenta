@@ -24,27 +24,17 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Judul Berita</label>
-                                                <input name="link" id="link" class="form-control" type="text" placeholder="Masukkan judul berita ..." value="<?= $detail[0]->link ?>">
-                                                <?= form_error('tujuan', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="id" id="id" class="form-control" type="hidden" placeholder="Masukkan id berita ..." value="<?= $detail[0]->id ?>">
+                                                <input name="created_at" id="created_at" class="form-control" type="hidden" placeholder="Masukkan created_at berita ..." value="<?= $detail[0]->created_at ?>">
+                                                <input name="judul" id="judul" class="form-control" type="text" placeholder="Masukkan judul berita ..." value="<?= $detail[0]->judul ?>">
+                                                <?= form_error('judul', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Deskripsi Berita</label>
-                                                <input name="link" id="link" class="form-control" type="text" placeholder="Masukkan deskripsi berita ..." value="<?= $detail[0]->link ?>">
-                                                <?= form_error('tujuan', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="example-text-input" class="form-control-label">Deskripsi Berita</label>
-                                                <input name="link" id="link" class="form-control" type="text" placeholder="Masukkan deskripsi berita ..." value="<?= $detail[0]->link ?>">
-                                                <?= form_error('tujuan', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="deskripsi" id="deskripsi" class="form-control" type="text" placeholder="Masukkan deskripsi berita ..." value="<?= $detail[0]->deskripsi ?>">
+                                                <?= form_error('deskripsi', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
