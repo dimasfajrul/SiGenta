@@ -72,6 +72,10 @@
                     <span class="nav-link-text ms-1">Berkas Lain Lain</span>
                 </a>
             </li>
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Info Admin</h6>
+            </li>
+
             <?php if ($this->session->userdata('role') == 0) { ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('NewUpdate') ?>">
@@ -79,6 +83,14 @@
                             <i class="ni ni-archive-2 text-dark"></i>
                         </div>
                         <span class="nav-link-text ms-1">New Update</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('BeritaHighlight') ?>">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-active-40 text-dark"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Berita Highlight</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -91,9 +103,6 @@
                 </li>
             <?php } ?>
 
-            <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
-            </li>
 
             <li class="nav-item">
                 <a class="nav-link  " href="">
@@ -153,6 +162,6 @@
                 </div>
             </div>
         </div>
-        <a class="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
+        <a class="btn bg-gradient-primary mt-4 w-100" href="<?= base_url('Login') ?>" type="button">Keluar</a>
     </div>
 </aside>
