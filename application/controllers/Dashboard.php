@@ -5,6 +5,7 @@ class Dashboard extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('PinModel');
 		$this->load->model('BeritaModel');
 		$this->load->model('DashboardModel');
 		cek_session();
@@ -29,6 +30,7 @@ class Dashboard extends CI_Controller {
         $data['suratmasuk'] 	= $this->DashboardModel->data_suratmasuk();
         $data['notadinas']      = $this->DashboardModel->data_notadinas();
 		$data['berita'] 		= $this->BeritaModel->read();
+		$data['pin'] 			= $this->PinModel->read();
 
 		$this->load->view('dashboard', $data);
 	}

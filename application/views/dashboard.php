@@ -109,10 +109,6 @@
                                         <p class="mb-1 pt-2 text-bold">Hightlight</p>
                                         <h5 class="font-weight-bolder">Dukung Upaya Dekarbonisasi BUMN, Deputi Nani: Ini Upaya Nyata</h5>
                                         <p class="mb-5"> Deputi Bidang Koordinasi Pengelolaan Lingkungan dan Kehutanan </p>
-                                        <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="https://maritim.go.id/dukung-upaya-dekarbonisasi-bumn-deputi-nani-ini-upaya/">
-                                            Selengkapnya
-                                            <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
@@ -132,9 +128,9 @@
                         <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('<?= base_url('') ?>assets/img/ivancik.jpg');">
                             <span class="mask bg-gradient-dark"></span>
                             <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-                                <h5 class="text-white font-weight-bolder mb-4 pt-2">Work with the rockets</h5>
-                                <p class="text-white">Wealth creation is an evolutionarily recent positive-sum game. It is all about who take the opportunity first.</p>
-                                <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
+                                <h5 class="text-white font-weight-bolder mb-4 pt-2"><?= $pin[0]->judul ?></h5>
+                                <p class="text-white"><?= $pin[0]->deskripsi ?>.</p>
+                                <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="<?= $pin[0]->link ?>" target="_blank">
                                     Read More
                                     <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                                 </a>
@@ -311,7 +307,7 @@
                                                     </td>
                                                     <td class="text-sm font-weight-bold mb-0"><?= substr($data->judul, 0, 50) . '...' ?></td>
                                                     <td class="align-middle">
-                                                        <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" target="_blank">
+                                                        <a href="<?= $data->link ?>" class="btn btn-primary" type="button" target="_blank">
                                                             Lihat berita
                                                         </a>
                                                     </td>

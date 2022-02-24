@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <h6>New Update </h6>
-                                        <a href="<?= base_url('NewUpdate/tambah') ?>" class="btn btn-primary" type="button">Tambah Berita</a>
+                                    <a href="<?= base_url('NewUpdate/tambah') ?>" class="btn btn-primary" type="button">Tambah Berita</a>
                                 </div>
                             </div>
                         </div>
@@ -53,15 +53,15 @@
                                                             Lihat berita
                                                         </a>
                                                     </td>
-                                                        <td class="align-middle">
-                                                            <a href="<?= base_url('NewUpdate/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
-                                                                Edit
-                                                            </a>
-                                                            |
-                                                            <a href="<?= base_url('NewUpdate/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
-                                                                Hapus
-                                                            </a>
-                                                        </td>
+                                                    <td class="align-middle">
+                                                        <a href="<?= base_url('NewUpdate/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
+                                                            Edit
+                                                        </a>
+                                                        |
+                                                        <a href="<?= base_url('NewUpdate/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                            Hapus
+                                                        </a>
+                                                    </td>
                                                 </tr>
                                             <?php $no++;
                                             } ?>

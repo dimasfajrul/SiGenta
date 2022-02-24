@@ -13,27 +13,25 @@
                         <div class="card-header pb-0">
                             <div class="row">
                                 <div class="col-10">
-                                    <h6>Edit Berita Highlight</h6>
+                                    <h6>Tambah Highlight</h6>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body pt-0 pb-2">
                             <div class="row pl-2">
-                                <form method="post" action="<?= site_url('BeritaHighlight/edit/' . $detail[0]->id) ?>" enctype="multipart/form-data">
+                                <form method="post" action="<?= site_url('BeritaHighlight/tambah') ?>" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Judul Berita</label>
-                                                <input name="id" id="id" class="form-control" type="hidden" value="<?= $detail[0]->id ?>">
-                                                <input name="created_at" id="created_at" class="form-control" type="hidden" value="<?= $detail[0]->created_at ?>">
-                                                <input name="judul" id="judul" class="form-control" type="text" placeholder="Masukkan judul berkas ..." value="<?= $detail[0]->judul ?>">
+                                                <input name="judul" id="judul" class="form-control" type="text" placeholder="Masukkan judul berita ..." id="example-text-input">
                                                 <?= form_error('judul', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="example-search-input" class="form-control-label">Deskripsi</label>
-                                                <input name="deskripsi" id="deskripsi" class="form-control" type="text" placeholder="Masukkan deskripsi berkas ..." value="<?= $detail[0]->deskripsi ?>">
+                                                <label for="example-text-input" class="form-control-label">Deskripsi Berita</label>
+                                                <input name="deskripsi" id="deskripsi" class="form-control" type="text" placeholder="Masukkan deskripsi berita ..." id="example-text-input">
                                                 <?= form_error('deskripsi', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -42,7 +40,7 @@
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Link Berita</label>
-                                                <input name="link" id="link" class="form-control" type="text" placeholder="Masukkan link berkas ..." value="<?= $detail[0]->link ?>">
+                                                <input name="link" id="link" class="form-control" type="text" placeholder="Masukkan link berita ..." id="example-text-input">
                                                 <?= form_error('link', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
@@ -64,4 +62,3 @@
                 </div>
             </div>
             <?php $this->load->view('partials/footer'); ?>
-        
