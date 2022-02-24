@@ -24,35 +24,25 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Tahun Anggaran</label>
-                                                <input name="judul" id="judul" class="form-control" type="text" placeholder="Masukkan tahun anggaran ..." id="example-text-input">
-                                                <?= form_error('judul', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <input name="tahun" id="tahun" class="form-control" type="text" placeholder="Masukkan tahun anggaran ...">
+                                                <?= form_error('tahun', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="example-text-input" class="form-control-label">Anggaran</label>
-                                                <input name="deskripsi" id="deskripsi" class="form-control" type="text" placeholder="Masukkan anggaran ..." id="example-text-input">
-                                                <?= form_error('deskripsi', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <label for="example-text-input" class="form-control-label">Nama Anggaran</label>
+                                                <input name="nama" id="nama" class="form-control" type="text" placeholder="Masukkan nama angaran...">
+                                                <?= form_error('nama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label for="example-text-input" class="form-control-label">Realisasi </label>
-                                                <input name="link" id="link" class="form-control" type="text" placeholder="Masukkan realisasi anggaran ..." id="example-text-input">
-                                                <?= form_error('link', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <label for="example-text-input" class="form-control-label">Sisa</label>
-                                                <input name="link" id="link" class="form-control" type="text" placeholder="Masukkan sisa anggaran ..." id="example-text-input">
-                                                <?= form_error('link', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                                <label for="example-text-input" class="form-control-label">Jumlah </label>
+                                                <input name="jumlah" id="jumlah" class="form-control" type="text" placeholder="Masukkan jumlah anggaran ...">
+                                                <?= form_error('jumlah', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
                                     </div>

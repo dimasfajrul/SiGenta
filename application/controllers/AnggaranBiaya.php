@@ -5,7 +5,7 @@ class AnggaranBiaya extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('PinModel');
+		$this->load->model('AnggaranModel');
 		$this->load->library('form_validation');
 		cek_session();
 	}
@@ -24,33 +24,34 @@ class AnggaranBiaya extends CI_Controller
 			$this->session->unset_userdata('error_msg');
 		}
 
-		$data['pin'] = $this->PinModel->read();
+		$data['biaya'] = $this->AnggaranModel->read();
+		$data['total'] = $this->AnggaranModel->total();
 		$this->load->view('AnggaranBiaya/anggaran_biaya', $data);
 	}
 
 	public function tambah()
 	{
-		$this->form_validation->set_rules('judul', 'Judul', 'required');
-		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
-		$this->form_validation->set_rules('link', 'Link Berkas', 'required|trim|max_length[255]');
+		$this->form_validation->set_rules('tahun', 'Tahun', 'required|numeric');
+		$this->form_validation->set_rules('nama', 'Anggaran', 'required');
+		$this->form_validation->set_rules('jumlah', 'Jumlah', 'required|numeric');
 
 		if ($this->form_validation->run() == false) {
 			$this->load->view('anggaranbiaya/tambah');
 		} else {
 			$dataPost = array(
 				'id'			=> '',
-				'judul'			=> $this->input->post('judul'),
-				'deskripsi'		=> $this->input->post('deskripsi'),
-				'link'			=> $this->input->post('link'),
+				'tahun'			=> $this->input->post('tahun'),
+				'nama'			=> $this->input->post('nama'),
+				'jumlah'		=> $this->input->post('jumlah'),
 				'created_at'	=> date('Y-m-d H:i:s'),
 				'updated_at'	=> date('Y-m-d H:i:s')
 			);
-			if ($this->PinModel->create($dataPost)) {
+			if ($this->AnggaranModel->create($dataPost)) {
 				$this->session->set_flashdata(
 					'success_msg',
 					'<div class="alert alert-success alert-dismissible fade show" role="alert">
 					<span class="alert-icon"><i class="ni ni-like-2"></i></span>
-					<span class="alert-text"><strong>Selamat!</strong> Berita berhasil ditambahkan!</span>
+					<span class="alert-text"><strong>Selamat!</strong> Anggaran berhasil ditambahkan!</span>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -62,7 +63,7 @@ class AnggaranBiaya extends CI_Controller
 					'error_msg',
 					'<div class="alert alert-danger alert-dismissible fade show" role="alert">
 					<span class="alert-icon"><i class="ni ni-like-2"></i></span>
-					<span class="alert-text"><strong>Maaf!</strong> Berita gagal ditambahkan!</span>
+					<span class="alert-text"><strong>Maaf!</strong> Anggaran gagal ditambahkan!</span>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -75,19 +76,21 @@ class AnggaranBiaya extends CI_Controller
 
 	public function edit($id = null)
 	{
-		$this->form_validation->set_rules('judul', 'Judul', 'required');
-		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
-		$this->form_validation->set_rules('link', 'Link Berkas', 'required|trim|max_length[255]');
+		$this->form_validation->set_rules('tahun', 'Tahun', 'required|numeric');
+		$this->form_validation->set_rules('anggaran', 'Anggaran', 'required|numeric');
+		$this->form_validation->set_rules('realisasi', 'Realisasi', 'required|numeric');
+		$this->form_validation->set_rules('sisa', 'Sisa', 'required|numeric');
 
 		if ($this->form_validation->run() == false) {
-			$data['detail']	= $this->PinModel->detail($id);
+			$data['detail']	= $this->AnggaranModel->detail($id);
 			$this->load->view('AnggaranBiaya/edit', $data);
 		} else {
-			$update = $this->PinModel->update(array(
+			$update = $this->AnggaranModel->update(array(
 				'id'			=> $this->input->post('id'),
-				'judul'			=> $this->input->post('judul'),
-				'deskripsi'		=> $this->input->post('deskripsi'),
-				'link'			=> $this->input->post('link'),
+				'tahun'			=> $this->input->post('tahun'),
+				'anggaran'		=> $this->input->post('anggaran'),
+				'realisasi'		=> $this->input->post('realisasi'),
+				'sisa'			=> $this->input->post('sisa'),
 				'created_at'	=> $this->input->post('created_at'),
 				'updated_at'	=> date('Y-m-d H:i:s')
 			), $id);
@@ -96,7 +99,7 @@ class AnggaranBiaya extends CI_Controller
 					'success_msg',
 					'<div class="alert alert-success alert-dismissible fade show" role="alert">
 					<span class="alert-icon"><i class="ni ni-like-2"></i></span>
-					<span class="alert-text"><strong>Selamat!</strong> Berita Highlight berhasil diubah!</span>
+					<span class="alert-text"><strong>Selamat!</strong> Anggaran Highlight berhasil diubah!</span>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -108,7 +111,7 @@ class AnggaranBiaya extends CI_Controller
 					'error_msg',
 					'<div class="alert alert-danger alert-dismissible fade show" role="alert">
 					<span class="alert-icon"><i class="ni ni-like-2"></i></span>
-					<span class="alert-text"><strong>Maaf!</strong> Berita Highlight gagal diubah!</span>
+					<span class="alert-text"><strong>Maaf!</strong> Anggaran Highlight gagal diubah!</span>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -121,7 +124,7 @@ class AnggaranBiaya extends CI_Controller
 
 	public function hapus($id)
 	{
-		$delete = $this->PinModel->delete($id);
+		$delete = $this->AnggaranModel->delete($id);
 		if ($delete) {
 			$this->session->set_flashdata(
 				'success_msg',

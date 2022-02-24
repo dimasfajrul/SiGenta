@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="col-8">
                                     <h6>Anggaran Biaya</h6>
-                                    <?php if ($pin != null) { ?>
+                                    <?php if ($total > 2 ) { ?>
                                         <button class="btn btn-primary" type="button" disabled>Tambah Data Anggaran</button>
                                     <?php } else { ?>
                                         <a href="<?= base_url('AnggaranBiaya/tambah') ?>" class="btn btn-primary" type="button">Tambah Data Anggaran</a>
@@ -35,32 +35,30 @@
                                         <tr>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">No</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tahun Anggaran</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Anggaran</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Realisasi</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Sisa</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Biaya</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Jumlah</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php if (!empty($pin)) {
+                                        <?php if (!empty($biaya)) {
                                             $no = 1;
-                                            foreach ($pin as $data) { ?>
+                                            foreach ($biaya as $data) { ?>
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex px-2">
                                                             <?= $no ?>
                                                         </div>
                                                     </td>
-                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->tahunanggaran ?></td>
-                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->anggaran ?></td>
-                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->realisasi ?></td>
-                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->sisa ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->tahun ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->nama ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0">Rp. <?= number_format($data->jumlah) ?></td>
                                                     <td class="align-middle">
-                                                    <a href="<?= base_url('BeritaHighlight/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
+                                                    <a href="<?= base_url('AnggaranBiaya/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
                                                         Edit
                                                     </a>
                                                     |
-                                                    <a href="<?= base_url('BeritaHighlight/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                    <a href="<?= base_url('AnggaranBiaya/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
                                                         Hapus
                                                     </a>
                                                     </td>
