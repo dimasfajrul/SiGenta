@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2022 at 09:58 AM
+-- Generation Time: Feb 24, 2022 at 08:21 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -76,6 +76,28 @@ CREATE TABLE `data_dokumentasi` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `data_highlight`
+--
+
+CREATE TABLE `data_highlight` (
+  `id` int(3) NOT NULL,
+  `judul` varchar(100) NOT NULL,
+  `deskripsi` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_highlight`
+--
+
+INSERT INTO `data_highlight` (`id`, `judul`, `deskripsi`, `link`, `created_at`, `updated_at`) VALUES
+(2, 'Vamos Visca el Barca', 'Lorem ipsum dolor sit amet queque el toro malaguena como tocar a custica susperios sinyorita', 'https://www.youtube.com/watch?v=lQVIVX5iHkU', '2022-02-24 07:05:11', '2022-02-24 07:05:11');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `data_isu`
 --
 
@@ -116,6 +138,28 @@ CREATE TABLE `data_keuangan` (
 
 INSERT INTO `data_keuangan` (`id`, `judul`, `ro`, `link`, `created_at`, `updated_at`) VALUES
 (3, 'asdasd', 2, 'https://www.youtube.com/watch?v=lQVIVX5iHkU', '2022-02-23 07:09:58', '2022-02-23 07:11:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_newupdate`
+--
+
+CREATE TABLE `data_newupdate` (
+  `id` int(3) NOT NULL,
+  `judul` varchar(100) NOT NULL,
+  `deskripsi` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_newupdate`
+--
+
+INSERT INTO `data_newupdate` (`id`, `judul`, `deskripsi`, `link`, `created_at`, `updated_at`) VALUES
+(2, 'Implementasi Website E – Commerce Sayurmurah.com Menggunakan Laravel (Studi Kasus Di Seven Inc)', 'asdasd', 'https://www.youtube.com/watch?v=lQVIVX5iHkU', '2022-02-24 06:35:15', '2022-02-24 06:35:15');
 
 -- --------------------------------------------------------
 
@@ -232,6 +276,12 @@ ALTER TABLE `data_dokumentasi`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `data_highlight`
+--
+ALTER TABLE `data_highlight`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `data_isu`
 --
 ALTER TABLE `data_isu`
@@ -241,6 +291,12 @@ ALTER TABLE `data_isu`
 -- Indexes for table `data_keuangan`
 --
 ALTER TABLE `data_keuangan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `data_newupdate`
+--
+ALTER TABLE `data_newupdate`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -290,6 +346,12 @@ ALTER TABLE `data_dokumentasi`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `data_highlight`
+--
+ALTER TABLE `data_highlight`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `data_isu`
 --
 ALTER TABLE `data_isu`
@@ -300,6 +362,12 @@ ALTER TABLE `data_isu`
 --
 ALTER TABLE `data_keuangan`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `data_newupdate`
+--
+ALTER TABLE `data_newupdate`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `data_notadinas`
