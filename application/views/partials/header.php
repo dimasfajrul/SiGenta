@@ -19,4 +19,7 @@
     <link href="<?= base_url('') ?>assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="<?= base_url('') ?>assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
 </head>

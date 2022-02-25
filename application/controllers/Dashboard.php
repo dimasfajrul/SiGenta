@@ -9,6 +9,7 @@ class Dashboard extends CI_Controller {
 		$this->load->model('BeritaModel');
 		$this->load->model('DashboardModel');
 		$this->load->model('AgendaModel');
+		$this->load->model('AnggaranModel');
 		cek_session();
 	}
 
@@ -24,6 +25,16 @@ class Dashboard extends CI_Controller {
 		if ($this->session->userdata('error_msg')) {
 			$data['error_msg'] = $this->session->userdata('error_msg');
 			$this->session->unset_userdata('error_msg');
+		}
+
+		$querydata = $this->db->query("SELECT * FROM data_anggaran")->result();
+		//PIE 10 Kategori
+		if ($querydata != null) {
+			foreach ($querydata as $row) {
+				$data['nama'][] = $row->nama;
+				$data['jumlah'][] = (int) $row->jumlah;
+			}
+			$data['pie'] = json_encode($data);
 		}
 
 		$data['isu']     		= $this->DashboardModel->data_isu();
