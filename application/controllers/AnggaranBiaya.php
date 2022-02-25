@@ -77,9 +77,8 @@ class AnggaranBiaya extends CI_Controller
 	public function edit($id = null)
 	{
 		$this->form_validation->set_rules('tahun', 'Tahun', 'required|numeric');
-		$this->form_validation->set_rules('anggaran', 'Anggaran', 'required|numeric');
-		$this->form_validation->set_rules('realisasi', 'Realisasi', 'required|numeric');
-		$this->form_validation->set_rules('sisa', 'Sisa', 'required|numeric');
+		$this->form_validation->set_rules('nama', 'Anggaran', 'required');
+		$this->form_validation->set_rules('jumlah', 'Jumlah', 'required|numeric');
 
 		if ($this->form_validation->run() == false) {
 			$data['detail']	= $this->AnggaranModel->detail($id);
@@ -88,9 +87,8 @@ class AnggaranBiaya extends CI_Controller
 			$update = $this->AnggaranModel->update(array(
 				'id'			=> $this->input->post('id'),
 				'tahun'			=> $this->input->post('tahun'),
-				'anggaran'		=> $this->input->post('anggaran'),
-				'realisasi'		=> $this->input->post('realisasi'),
-				'sisa'			=> $this->input->post('sisa'),
+				'nama'			=> $this->input->post('nama'),
+				'jumlah'		=> $this->input->post('jumlah'),
 				'created_at'	=> $this->input->post('created_at'),
 				'updated_at'	=> date('Y-m-d H:i:s')
 			), $id);

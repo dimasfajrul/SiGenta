@@ -37,6 +37,8 @@ class Dashboard extends CI_Controller {
 			$data['pie'] = json_encode($data);
 		}
 
+		$data['anggaran'] = $this->db->query("SELECT * FROM data_anggaran")->result();
+
 		$data['isu']     		= $this->DashboardModel->data_isu();
         $data['suratkeluar']    = $this->DashboardModel->data_suratkeluar();
         $data['suratmasuk'] 	= $this->DashboardModel->data_suratmasuk();
