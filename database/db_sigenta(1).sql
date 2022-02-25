@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2022 at 10:17 AM
+-- Generation Time: Feb 25, 2022 at 12:02 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -57,10 +57,21 @@ INSERT INTO `data_agenda` (`id`, `agenda`, `waktu`, `tanggal`, `tempat`, `link`,
 
 CREATE TABLE `data_anggaran` (
   `id` int(1) NOT NULL,
-  `tahun` year(4) NOT NULL,
-  `nama_anggaran` varchar(100) NOT NULL,
-  `jumlah` int(11) NOT NULL
+  `tahun` varchar(4) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_anggaran`
+--
+
+INSERT INTO `data_anggaran` (`id`, `tahun`, `nama`, `jumlah`, `created_at`, `updated_at`) VALUES
+(2, '2018', 'Anggaran', 1000000, '2022-02-24 10:49:18', '2022-02-24 10:49:18'),
+(3, '2018', 'Realisasi', 900000, '2022-02-24 10:50:34', '2022-02-24 10:50:34'),
+(5, '2018', 'Sisa', 100000, '2022-02-24 10:53:36', '2022-02-24 10:53:36');
 
 -- --------------------------------------------------------
 
@@ -369,7 +380,7 @@ ALTER TABLE `data_agenda`
 -- AUTO_INCREMENT for table `data_anggaran`
 --
 ALTER TABLE `data_anggaran`
-  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `data_berkaslain`
