@@ -54,7 +54,7 @@
                                                     </td>
                                                     <td class="text-sm font-weight-bold mb-0"><?= $data->judul ?></td>
                                                     <td class="text-sm font-weight-bold mb-0"><?= $data->kegiatan ?></td>
-                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->kisu ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->isu ?></td>
                                                     <td class="align-middle">
                                                         <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" target="_blank">
                                                             Lihat berkas

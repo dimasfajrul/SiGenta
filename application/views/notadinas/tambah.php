@@ -48,7 +48,7 @@
                                                     <option value="Kincir Air">Kincir Air</option>
                                                     <option value="Lain-Lain">Lain-Lain</option>
                                                 </select>
-                                                <?= form_error('ro', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>                                                
+                                                <?= form_error('isu', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>                                                
                                             </div>
                                         <div class="col-sm-12">
                                             <div class="form-group">

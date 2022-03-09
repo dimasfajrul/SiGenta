@@ -39,7 +39,7 @@ class Dashboard extends CI_Controller {
 
 		$data['anggaran'] = $this->db->query("SELECT * FROM data_anggaran")->result();
 
-		$data['isu']     		= $this->DashboardModel->data_isu();
+		$data['keuangan']     	= $this->DashboardModel->data_keuangan();
         $data['suratkeluar']    = $this->DashboardModel->data_suratkeluar();
         $data['suratmasuk'] 	= $this->DashboardModel->data_suratmasuk();
         $data['notadinas']      = $this->DashboardModel->data_notadinas();

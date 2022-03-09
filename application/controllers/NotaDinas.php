@@ -31,6 +31,7 @@ class NotaDinas extends CI_Controller
 	public function tambah()
 	{
 		$this->form_validation->set_rules('tujuan', 'Tujuan', 'required');
+		$this->form_validation->set_rules('isu', 'isu', 'required');
 		$this->form_validation->set_rules('tanggal', 'Perihal', 'required|trim');
 		$this->form_validation->set_rules('link', 'Link Berkas', 'required|trim|max_length[255]');
 
@@ -42,6 +43,7 @@ class NotaDinas extends CI_Controller
 				'tujuan'		=> $this->input->post('tujuan'),
 				'tanggal'		=> $this->input->post('tanggal'),
 				'link'			=> $this->input->post('link'),
+				'isu'			=> $this->input->post('isu'),
 				'created_at'	=> date('Y-m-d H:i:s'),
 				'updated_at'	=> date('Y-m-d H:i:s')
 			);
@@ -76,6 +78,7 @@ class NotaDinas extends CI_Controller
 	public function edit($id = null)
 	{
 		$this->form_validation->set_rules('tujuan', 'Tujuan', 'required');
+		$this->form_validation->set_rules('isu', 'isu', 'required');
 		$this->form_validation->set_rules('tanggal', 'Perihal', 'required|trim');
 		$this->form_validation->set_rules('link', 'Link Berkas', 'required|trim|max_length[255]');
 
@@ -88,6 +91,7 @@ class NotaDinas extends CI_Controller
 				'tujuan'		=> $this->input->post('tujuan'),
 				'tanggal'		=> $this->input->post('tanggal'),
 				'link'			=> $this->input->post('link'),
+				'isu'			=> $this->input->post('isu'),
 				'created_at'	=> $this->input->post('created_at'),
 				'updated_at'	=> date('Y-m-d H:i:s')
 			), $id);

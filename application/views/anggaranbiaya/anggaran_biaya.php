@@ -9,9 +9,9 @@
         <div class="container-fluid py-4">
             <?php if (!empty($success_msg)) { ?>
                 <?php echo $success_msg; ?>
-                <?php if (!empty($error_msg)) { ?>
-                    <?php echo $error_msg; ?>
-                <?php } ?>
+            <?php } ?>
+            <?php if (!empty($error_msg)) { ?>
+                <?php echo $error_msg; ?>
             <?php } ?>
             <div class="row">
                 <div class="col-12">
@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="col-8">
                                     <h6>Anggaran Biaya</h6>
-                                    <?php if ($total > 2 ) { ?>
+                                    <?php if ($total > 2) { ?>
                                         <button class="btn btn-primary" type="button" disabled>Tambah Data Anggaran</button>
                                     <?php } else { ?>
                                         <a href="<?= base_url('AnggaranBiaya/tambah') ?>" class="btn btn-primary" type="button">Tambah Data Anggaran</a>
@@ -54,13 +54,13 @@
                                                     <td class="text-sm font-weight-bold mb-0"><?= $data->nama ?></td>
                                                     <td class="text-sm font-weight-bold mb-0">Rp. <?= number_format($data->jumlah) ?></td>
                                                     <td class="align-middle">
-                                                    <a href="<?= base_url('AnggaranBiaya/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
-                                                        Edit
-                                                    </a>
-                                                    |
-                                                    <a href="<?= base_url('AnggaranBiaya/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
-                                                        Hapus
-                                                    </a>
+                                                        <a href="<?= base_url('AnggaranBiaya/edit/' . $data->id) ?>" class="text-info font-weight-bold text-xs">
+                                                            Edit
+                                                        </a>
+                                                        |
+                                                        <a href="<?= base_url('AnggaranBiaya/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                            Hapus
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             <?php $no++;

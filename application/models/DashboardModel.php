@@ -9,9 +9,9 @@ class DashboardModel extends CI_Model
         $this->load->database();
     }
 
-    public function data_isu()
+    public function data_keuangan()
     {
-        $query = $this->db->get('data_isu');
+        $query = $this->db->get('data_keuangan');
         if ($query->num_rows() > 0) {
             return $query->num_rows();
         } else {

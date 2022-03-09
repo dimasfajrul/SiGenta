@@ -9,9 +9,9 @@
         <div class="container-fluid mt--6">
             <?php if (!empty($success_msg)) { ?>
                 <?php echo $success_msg; ?>
-                <?php if (!empty($error_msg)) { ?>
-                    <?php echo $error_msg; ?>
-                <?php } ?>
+            <?php } ?>
+            <?php if (!empty($error_msg)) { ?>
+                <?php echo $error_msg; ?>
             <?php } ?>
             <div class="row">
                 <div class="col-xl-4 order-xl-2">
@@ -48,44 +48,44 @@
                             </div>
                         </div>
                         <div class="card-body">
-                        <form action="<?= site_url('KelolaAkun/upPass') ?>" method="post">
-                            <!-- Address -->
-                            <h6 class="heading-small text-muted mb-4">Password</h6>
-                            <div class="pl-lg-4">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="pwlama">Password Lama</label>
-                                            <input id="pwlama" name="pwlama" class="form-control" value="" placeholder="Masukkan password lama anda ..." type="password">
-                                            <?= form_error('pwlama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                            <form action="<?= site_url('KelolaAkun/upPass') ?>" method="post">
+                                <!-- Address -->
+                                <h6 class="heading-small text-muted mb-4">Password</h6>
+                                <div class="pl-lg-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="pwlama">Password Lama</label>
+                                                <input id="pwlama" name="pwlama" class="form-control" value="" placeholder="Masukkan password lama anda ..." type="password">
+                                                <?= form_error('pwlama', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="pwbaru">Password Baru</label>
+                                                <input id="pwbaru" name="pwbaru" class="form-control" value="" placeholder="Masukkan password baru anda ..." type="password">
+                                                <?= form_error('pwbaru', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="konfirpwbaru">Konfirmasi Password Baru</label>
+                                                <input id="konfirpwbaru" name="konfirpwbaru" class="form-control" value="" placeholder="Masukkan kembali password baru anda ..." type="password">
+                                                <?= form_error('konfirpwbaru', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="pwbaru">Password Baru</label>
-                                            <input id="pwbaru" name="pwbaru" class="form-control" value="" placeholder="Masukkan password baru anda ..." type="password">
-                                            <?= form_error('pwbaru', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="konfirpwbaru">Konfirmasi Password Baru</label>
-                                            <input id="konfirpwbaru" name="konfirpwbaru" class="form-control" value="" placeholder="Masukkan kembali password baru anda ..." type="password">
-                                            <?= form_error('konfirpwbaru', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>
-                                        </div>
+                                    <hr class="my-4" />
+                                    <div class="form-group text-right">
+                                        <a href="<?= base_url("KelolaAkun/profile") ?>" class="btn btn-icon btn-danger" type="button">
+                                            <span class="btn-inner--text">Kembali</span>
+                                        </a>
+                                        <button class="btn btn-icon btn-success" type="submit">
+                                            <span class="btn-inner--text">Simpan</span>
+                                        </button>
                                     </div>
                                 </div>
-                                <hr class="my-4" />
-                                <div class="form-group text-right">
-                                    <a href="<?= base_url("KelolaAkun/profile") ?>" class="btn btn-icon btn-danger" type="button">
-                                        <span class="btn-inner--text">Kembali</span>
-                                    </a>
-                                    <button class="btn btn-icon btn-success" type="submit">
-                                        <span class="btn-inner--text">Simpan</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
                         </div>
                     </div>
                 </div>

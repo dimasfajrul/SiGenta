@@ -9,9 +9,9 @@
         <div class="container-fluid mt-4">
             <?php if (!empty($success_msg)) { ?>
                 <?php echo $success_msg; ?>
-                <?php if (!empty($error_msg)) { ?>
-                    <?php echo $error_msg; ?>
-                <?php } ?>
+            <?php } ?>
+            <?php if (!empty($error_msg)) { ?>
+                <?php echo $error_msg; ?>
             <?php } ?>
             <div class="row">
                 <div class="col-xl-4 order-xl-2">

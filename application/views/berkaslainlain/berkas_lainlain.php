@@ -9,9 +9,9 @@
         <div class="container-fluid py-4">
             <?php if (!empty($success_msg)) { ?>
                 <?php echo $success_msg; ?>
-                <?php if (!empty($error_msg)) { ?>
-                    <?php echo $error_msg; ?>
-                <?php } ?>
+            <?php } ?>
+            <?php if (!empty($error_msg)) { ?>
+                <?php echo $error_msg; ?>
             <?php } ?>
             <div class="row">
                 <div class="col-12">
@@ -64,7 +64,7 @@
                                                                 Edit
                                                             </a>
                                                             |
-                                                            <a href="<?= base_url('Dokumentasi/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
+                                                            <a href="<?= base_url('BerkasLainLain/hapus/' . $data->id) ?>" class="text-danger font-weight-bold text-xs" type="button" onclick="javascripst: return confirm('Anda yakin menghapus data?')">
                                                                 Hapus
                                                             </a>
                                                         </td>

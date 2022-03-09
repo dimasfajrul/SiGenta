@@ -9,9 +9,9 @@
         <div class="container-fluid py-4">
             <?php if (!empty($success_msg)) { ?>
                 <?php echo $success_msg; ?>
-                <?php if (!empty($error_msg)) { ?>
-                    <?php echo $error_msg; ?>
-                <?php } ?>
+            <?php } ?>
+            <?php if (!empty($error_msg)) { ?>
+                <?php echo $error_msg; ?>
             <?php } ?>
             <div class="row">
                 <div class="col-12">
@@ -19,7 +19,7 @@
                         <div class="card-header pb-0">
                             <div class="row">
                                 <div class="col-10">
-                                    <h6>Nota Dinas </h6>
+                                    <h6>Nota Dinas</h6>
                                     <?php if ($this->session->userdata('role') == 0) { ?>
                                         <a href="<?= base_url('NotaDinas/tambah') ?>" class="btn btn-primary" type="button">Tambah Data</a>
                                     <?php } ?>
@@ -54,8 +54,7 @@
                                                     </td>
                                                     <td class="text-sm font-weight-bold mb-0"><?= $data->tujuan ?></td>
                                                     <td class="text-sm font-weight-bold mb-0"><?= date('d F Y', strtotime($data->tanggal)) ?></td>
-                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->kisu ?></td>
-                                                    <
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->isu ?></td>
                                                     <td class="align-middle">
                                                         <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" target="_blank">
                                                             Lihat berkas

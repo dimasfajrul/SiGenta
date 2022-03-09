@@ -9,9 +9,9 @@
         <div class="container-fluid py-4">
             <?php if (!empty($success_msg)) { ?>
                 <?php echo $success_msg; ?>
-                <?php if (!empty($error_msg)) { ?>
-                    <?php echo $error_msg; ?>
-                <?php } ?>
+            <?php } ?>
+            <?php if (!empty($error_msg)) { ?>
+                <?php echo $error_msg; ?>
             <?php } ?>
             <div class="row">
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -20,9 +20,9 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Data Tiap Isu</p>
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Data Keuangan</p>
                                         <h5 class="font-weight-bolder mb-0">
-                                            <?= $isu ?>
+                                            <?= $keuangan ?>
                                         </h5>
                                     </div>
                                 </div>

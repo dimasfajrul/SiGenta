@@ -42,6 +42,7 @@
                                     <div class="form-group">
                                                 <label for="example-search-input" class="form-control-label">Isu</label>
                                                 <select name="isu" id="isu" class="form-control">
+                                                    <option value="<?= $detail[0]->isu ?>"><?= $detail[0]->isu ?></option>
                                                     <option value="Garam">Garam</option>
                                                     <option value="Marine Bioproduct">Marine Bioproduct</option>
                                                     <option value="Kontainer Berpendingin">Kontainer Berpendingin</option>

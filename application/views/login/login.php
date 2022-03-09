@@ -37,9 +37,9 @@
                 <div class="card-body">
                   <?php if (!empty($success_msg)) { ?>
                     <?php echo $success_msg; ?>
-                    <?php if (!empty($error_msg)) { ?>
-                      <?php echo $error_msg; ?>
-                    <?php } ?>
+                  <?php } ?>
+                  <?php if (!empty($error_msg)) { ?>
+                    <?php echo $error_msg; ?>
                   <?php } ?>
                   <form action="" method="POST">
                     <label>Email</label>
