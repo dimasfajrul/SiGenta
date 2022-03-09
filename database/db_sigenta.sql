@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2022 at 12:02 PM
+-- Generation Time: Mar 09, 2022 at 04:06 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -105,10 +105,18 @@ CREATE TABLE `data_dokumentasi` (
   `id` int(3) NOT NULL,
   `judul` varchar(100) NOT NULL,
   `kegiatan` varchar(255) NOT NULL,
+  `isu` varchar(100) NOT NULL,
   `link` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_dokumentasi`
+--
+
+INSERT INTO `data_dokumentasi` (`id`, `judul`, `kegiatan`, `isu`, `link`, `created_at`, `updated_at`) VALUES
+(4, 'asdasd', 'asdasd', 'Garam', 'https://www.youtube.com/watch?v=lQVIVX5iHkU', '2022-03-09 01:33:55', '2022-03-09 01:58:57');
 
 -- --------------------------------------------------------
 
@@ -209,6 +217,7 @@ CREATE TABLE `data_notadinas` (
   `tujuan` varchar(100) NOT NULL,
   `link` varchar(255) NOT NULL,
   `tanggal` date NOT NULL,
+  `isu` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -217,8 +226,8 @@ CREATE TABLE `data_notadinas` (
 -- Dumping data for table `data_notadinas`
 --
 
-INSERT INTO `data_notadinas` (`id`, `tujuan`, `link`, `tanggal`, `created_at`, `updated_at`) VALUES
-(2, 'asd', 'https://www.youtube.com/watch?v=lQVIVX5iHkU', '2022-02-03', '2022-02-23 07:14:15', '2022-02-23 07:20:58');
+INSERT INTO `data_notadinas` (`id`, `tujuan`, `link`, `tanggal`, `isu`, `created_at`, `updated_at`) VALUES
+(2, 'asd', 'https://www.youtube.com/watch?v=lQVIVX5iHkU', '2022-02-03', 'Garam', '2022-02-23 07:14:15', '2022-03-09 02:00:30');
 
 -- --------------------------------------------------------
 
@@ -392,7 +401,7 @@ ALTER TABLE `data_berkaslain`
 -- AUTO_INCREMENT for table `data_dokumentasi`
 --
 ALTER TABLE `data_dokumentasi`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `data_highlight`
