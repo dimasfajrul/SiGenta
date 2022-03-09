@@ -35,6 +35,7 @@
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tujuan</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tanggal</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Isu</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Berkas</th>
                                             <?php if ($this->session->userdata('role') == 0) { ?>
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
@@ -53,6 +54,8 @@
                                                     </td>
                                                     <td class="text-sm font-weight-bold mb-0"><?= $data->tujuan ?></td>
                                                     <td class="text-sm font-weight-bold mb-0"><?= date('d F Y', strtotime($data->tanggal)) ?></td>
+                                                    <td class="text-sm font-weight-bold mb-0"><?= $data->kisu ?></td>
+                                                    <
                                                     <td class="align-middle">
                                                         <a href="<?= $data->link ?>" class="text-secondary font-weight-bold text-xs" target="_blank">
                                                             Lihat berkas

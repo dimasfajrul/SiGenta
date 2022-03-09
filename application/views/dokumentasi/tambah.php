@@ -13,7 +13,7 @@
                         <div class="card-header pb-0">
                             <div class="row">
                                 <div class="col-10">
-                                    <h6>Tambah Dokumentasi</h6>
+                                    <h6>Tambah Berkas dan Dokumentasi</h6>
                                 </div>
                             </div>
                         </div>
@@ -37,6 +37,19 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                    <div class="form-group">
+                                                <label for="example-search-input" class="form-control-label">Isu</label>
+                                                <select name="isu" id="isu" class="form-control">
+                                                    <option value="Garam">Garam</option>
+                                                    <option value="Marine Bioproduct">Marine Bioproduct</option>
+                                                    <option value="Kontainer Berpendingin">Kontainer Berpendingin</option>
+                                                    <option value="Produk Olahan KP">Produk Olahan KP</option>
+                                                    <option value="Indonesia-Korea">Indonesia-Korea</option>
+                                                    <option value="Kincir Air">Kincir Air</option>
+                                                    <option value="Lain-Lain">Lain-Lain</option>
+                                                </select>
+                                                <?= form_error('ro', '<small style="padding-left: 0; margin-left: 0;" class="text-danger">', '</small>'); ?>                                                
+                                            </div>
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="form-control-label">Link berkas</label>
